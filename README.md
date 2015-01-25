@@ -1,1 +1,3 @@
-# ArtificialIntelligence
+# Artificial Intelligence
+
+AI assignments here.
