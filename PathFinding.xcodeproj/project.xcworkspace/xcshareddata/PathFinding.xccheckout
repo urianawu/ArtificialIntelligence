@@ -14,11 +14,11 @@
 		<string>https://github.com/urianawu/ArtificialIntelligence.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PathFinding/PathFinding.xcodeproj</string>
+	<string>PathFinding.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BD2896DA63D0B12B1628460D9A8E0C2536DC459C</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/urianawu/ArtificialIntelligence.git</string>
