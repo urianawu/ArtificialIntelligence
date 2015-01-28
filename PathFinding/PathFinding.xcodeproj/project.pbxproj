@@ -28,7 +28,7 @@
 		C660836E1A759E38009A0AFC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C66083751A7702CA009A0AFC /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
 		C66083761A7702CA009A0AFC /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
-		C6A758A01A7997A900FCADD9 /* ATM.graph */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATM.graph; sourceTree = SOURCE_ROOT; };
+		C6A758A11A79AB3A00FCADD9 /* ATM.graph */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATM.graph; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 		C660836D1A759E38009A0AFC /* PathFinding */ = {
 			isa = PBXGroup;
 			children = (
-				C6A758A01A7997A900FCADD9 /* ATM.graph */,
+				C6A758A11A79AB3A00FCADD9 /* ATM.graph */,
 				C660836E1A759E38009A0AFC /* main.cpp */,
 				C66083751A7702CA009A0AFC /* Graph.cpp */,
 				C66083761A7702CA009A0AFC /* Graph.h */,
