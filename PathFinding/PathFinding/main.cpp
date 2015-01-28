@@ -7,9 +7,17 @@
 //
 
 #include <iostream>
+#include "Graph.h"
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+int main(int argc, char * argv[]) {
+    
+    char filename[256];
+    cout << "Please enter a graph file: ";
+    cin.getline (filename, 256);
+    cout << "Loading " << filename << endl;
+
+    Graph* graph = new Graph;
+    graph->read(filename);
     return 0;
 }

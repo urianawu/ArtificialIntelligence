@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C660836F1A759E38009A0AFC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C660836E1A759E38009A0AFC /* main.cpp */; };
+		C66083771A7702CA009A0AFC /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C66083751A7702CA009A0AFC /* Graph.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,9 @@
 /* Begin PBXFileReference section */
 		C660836B1A759E38009A0AFC /* PathFinding */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PathFinding; sourceTree = BUILT_PRODUCTS_DIR; };
 		C660836E1A759E38009A0AFC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C66083751A7702CA009A0AFC /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		C66083761A7702CA009A0AFC /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		C6A758A01A7997A900FCADD9 /* ATM.graph */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATM.graph; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +61,10 @@
 		C660836D1A759E38009A0AFC /* PathFinding */ = {
 			isa = PBXGroup;
 			children = (
+				C6A758A01A7997A900FCADD9 /* ATM.graph */,
 				C660836E1A759E38009A0AFC /* main.cpp */,
+				C66083751A7702CA009A0AFC /* Graph.cpp */,
+				C66083761A7702CA009A0AFC /* Graph.h */,
 			);
 			path = PathFinding;
 			sourceTree = "<group>";
@@ -118,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C66083771A7702CA009A0AFC /* Graph.cpp in Sources */,
 				C660836F1A759E38009A0AFC /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +240,7 @@
 				C66083741A759E38009A0AFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
