@@ -36,6 +36,7 @@ void Graph::read(char* filename)
                 fscanf(graphFile,"%d",&vertices[i]);
                 //skip newline character
                 fgetc(graphFile);
+                
             }
             
             //get edge number
@@ -52,14 +53,12 @@ void Graph::read(char* filename)
                 fscanf(graphFile,"%d",&edges[i]);
                 //skip newline character
                 fgetc(graphFile);
-                cout << edges[i-1] << " | " << edges[i] << endl;
+                //cout << edges[i-1] << " | " << edges[i] << endl;
             }
 
             
         }else
             cout << "graph file format incorrect, first line should give the number of vertices.";
-        
-
         
         
     }

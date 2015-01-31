@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C660836F1A759E38009A0AFC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C660836E1A759E38009A0AFC /* main.cpp */; };
 		C66083771A7702CA009A0AFC /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C66083751A7702CA009A0AFC /* Graph.cpp */; };
+		C6A758A41A79D41900FCADD9 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A758A21A79D41900FCADD9 /* Node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		C66083751A7702CA009A0AFC /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
 		C66083761A7702CA009A0AFC /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		C6A758A11A79AB3A00FCADD9 /* ATM.graph */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATM.graph; sourceTree = "<group>"; };
+		C6A758A21A79D41900FCADD9 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		C6A758A31A79D41900FCADD9 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,8 @@
 				C660836E1A759E38009A0AFC /* main.cpp */,
 				C66083751A7702CA009A0AFC /* Graph.cpp */,
 				C66083761A7702CA009A0AFC /* Graph.h */,
+				C6A758A21A79D41900FCADD9 /* Node.cpp */,
+				C6A758A31A79D41900FCADD9 /* Node.h */,
 			);
 			path = PathFinding;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A758A41A79D41900FCADD9 /* Node.cpp in Sources */,
 				C66083771A7702CA009A0AFC /* Graph.cpp in Sources */,
 				C660836F1A759E38009A0AFC /* main.cpp in Sources */,
 			);

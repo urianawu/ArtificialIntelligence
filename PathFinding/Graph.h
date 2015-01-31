@@ -12,13 +12,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>     /* atof */
-#include <math.h>
 #include <iostream>
 #include <sstream>
 #include <string.h>
-
+#include <vector>
 
 using namespace std;
+
 class Graph
 {
 public:
@@ -27,7 +27,7 @@ public:
     int * edges;
     
     void read(char * filename);
-    
+
 private:
     int getN(char* line);
 };
