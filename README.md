@@ -12,7 +12,7 @@ To change to correct working directory:
 
 Product -> Scheme -> Edit Scheme -> Working Directory -> check "use custom working directory" -> type in $PROJECT_DIR/PathFinding
 
-NOTE: store all graph files in the same path with .xcodeproj file.
+NOTE: store all graph files in the same path with main.cpp file.
 
 # User Manual(makefile)
 
