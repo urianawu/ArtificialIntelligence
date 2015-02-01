@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathFinding/main.cpp"
-            timestampString = "444432502.277681"
+            timestampString = "444461814.251631"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "main(int argc, char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathFinding/main.cpp"
-            timestampString = "444430790.427523"
+            timestampString = "444434971.36753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "search(T frontier, Node* init, int goal)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathFinding/main.cpp"
-            timestampString = "444430899.437717"
+            timestampString = "444434971.36753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "search(T frontier, Node* init, int goal)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathFinding/main.cpp"
-            timestampString = "444432502.277681"
+            timestampString = "444434971.36753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "search(T frontier, Node* init, int goal)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathFinding/main.cpp"
-            timestampString = "444432502.277681"
+            timestampString = "444434971.36753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "search(T frontier, Node* init, int goal)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,13 +106,57 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PathFinding/main.cpp"
-            timestampString = "444432502.277681"
+            timestampString = "444434971.36753"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "search(T frontier, Node* init, int goal)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Node* search&lt;std::__1::queue&lt;Node*, std::__1::deque&lt;Node*, std::__1::allocator&lt;Node*&gt; &gt; &gt; &gt;(std::__1::queue&lt;Node*, std::__1::deque&lt;Node*, std::__1::allocator&lt;Node*&gt; &gt; &gt;, Node*, int)"
+                  moduleName = "PathFinding"
+                  urlString = "file:///Users/Uriana/Google%20Drive/CSCE625AI/ArtificialIntelligence/PathFinding/main.cpp"
+                  timestampString = "444461963.771106"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "2761">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Node* search&lt;std::__1::stack&lt;Node*, std::__1::deque&lt;Node*, std::__1::allocator&lt;Node*&gt; &gt; &gt; &gt;(std::__1::stack&lt;Node*, std::__1::deque&lt;Node*, std::__1::allocator&lt;Node*&gt; &gt; &gt;, Node*, int)"
+                  moduleName = "PathFinding"
+                  urlString = "file:///Users/Uriana/Google%20Drive/CSCE625AI/ArtificialIntelligence/PathFinding/main.cpp"
+                  timestampString = "444461963.771496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "2761">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Node* search&lt;std::__1::priority_queue&lt;Node*, std::__1::vector&lt;Node*, std::__1::allocator&lt;Node*&gt; &gt;, std::__1::less&lt;Node*&gt; &gt; &gt;(std::__1::priority_queue&lt;Node*, std::__1::vector&lt;Node*, std::__1::allocator&lt;Node*&gt; &gt;, std::__1::less&lt;Node*&gt; &gt;, Node*, int)"
+                  moduleName = "PathFinding"
+                  urlString = "file:///Users/Uriana/Google%20Drive/CSCE625AI/ArtificialIntelligence/PathFinding/main.cpp"
+                  timestampString = "444461963.771847"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "5450">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
