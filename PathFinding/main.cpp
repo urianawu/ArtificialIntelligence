@@ -167,7 +167,6 @@ int main(int argc, char * argv[])
         case 'G':
         case 'g':
         {
-            //priority_queue<Node*> GBFSfrontier;
             priority_queue<Node*, vector<Node*>, compareDistance> GBFSfrontier;
             goal = search(GBFSfrontier, init, endI);
             break;
