@@ -9,22 +9,38 @@
 #include "Node.h"
 
 Graph* Node::graph;
+int Node::goalI;
 
-void Node::setGraph(Graph* g)
+void Node::init(Graph* g, int goalIndex)
 {
     graph = g;
+    goalI = goalIndex;
 }
 
-Node::Node(int i, Node* p)
+Node::Node(int i)
+{
+    v = i;
+    parent = NULL;
+    depth = 0;
+
+}
+
+Node::Node(int i, Node *p)
 {
     v = i;
     parent = p;
-    if (p == NULL) {
-        depth = 0;
-    }else{
-        depth = p->depth + 1;
-    }
-    heur = 0.0; //tbd
+    depth = p->depth + 1;
+    setHeur();
+}
+
+void Node::setHeur()
+{
+    int goalX, goalY, X, Y;
+    goalX = graph->vertices[goalI*2];
+    goalY = graph->vertices[goalI*2+1];
+    X = graph->vertices[v*2];
+    Y = graph->vertices[v*2+1];
+    hn = sqrtf(powf(abs(goalX - X),2.0) + powf(abs(goalY - Y),2.0));
 }
 
 vector<Node*> Node::successors()

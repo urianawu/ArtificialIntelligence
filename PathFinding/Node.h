@@ -11,6 +11,8 @@
 
 #include <stdio.h>
 #include <vector>
+#include <math.h>
+
 #include "Graph.h"
 using namespace std;
 
@@ -18,13 +20,17 @@ class Node{
 public:
     int v;
     int depth;
-    float heur;
+    float hn;
     Node* parent;
     static Graph* graph;
+    static int goalI;
     
-    void setGraph(Graph*); 
+    Node(int);
     Node(int, Node*);
     
+    void init(Graph*, int);
+    void setHeur();
+
     vector<Node*> successors(); //return neighbour
     vector<Node*> traceback(); // return path to root
     

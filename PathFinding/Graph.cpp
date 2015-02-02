@@ -22,7 +22,6 @@ void Graph::read(char* filename)
         
         // check whether the file starts with vertices or edges
         if (a[0] == 'v' || a[0] == 'V') {
-            cout << a;
             
             //get vertices number
             nOfVertices = getN(a);
