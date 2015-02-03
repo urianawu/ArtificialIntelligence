@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C660836A1A759E38009A0AFC"
-               BuildableName = "PathFinding"
-               BlueprintName = "PathFinding"
-               ReferencedContainer = "container:PathFinding.xcodeproj">
+               BuildableName = "Search"
+               BlueprintName = "Search"
+               ReferencedContainer = "container:Search.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C660836A1A759E38009A0AFC"
-            BuildableName = "PathFinding"
-            BlueprintName = "PathFinding"
-            ReferencedContainer = "container:PathFinding.xcodeproj">
+            BuildableName = "Search"
+            BlueprintName = "Search"
+            ReferencedContainer = "container:Search.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -44,7 +44,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "YES"
-      customWorkingDirectory = "$PROJECT_DIR/PathFinding"
+      customWorkingDirectory = "$PROJECT_DIR/Search"
       buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C660836A1A759E38009A0AFC"
-            BuildableName = "PathFinding"
-            BlueprintName = "PathFinding"
-            ReferencedContainer = "container:PathFinding.xcodeproj">
+            BuildableName = "Search"
+            BlueprintName = "Search"
+            ReferencedContainer = "container:Search.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C660836A1A759E38009A0AFC"
-            BuildableName = "PathFinding"
-            BlueprintName = "PathFinding"
-            ReferencedContainer = "container:PathFinding.xcodeproj">
+            BuildableName = "Search"
+            BlueprintName = "Search"
+            ReferencedContainer = "container:Search.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

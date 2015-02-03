@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C660836F1A759E38009A0AFC /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C660836E1A759E38009A0AFC /* main.cpp */; };
-		C66083771A7702CA009A0AFC /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C66083751A7702CA009A0AFC /* Graph.cpp */; };
-		C6A758A41A79D41900FCADD9 /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A758A21A79D41900FCADD9 /* Node.cpp */; };
+		C6A20B3E1A812EB9006D58EA /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A20B371A812EB9006D58EA /* Graph.cpp */; };
+		C6A20B3F1A812EB9006D58EA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A20B3A1A812EB9006D58EA /* main.cpp */; };
+		C6A20B401A812EB9006D58EA /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = C6A20B3B1A812EB9006D58EA /* makefile */; };
+		C6A20B411A812EB9006D58EA /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A20B3C1A812EB9006D58EA /* Node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,13 +26,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C660836B1A759E38009A0AFC /* PathFinding */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PathFinding; sourceTree = BUILT_PRODUCTS_DIR; };
-		C660836E1A759E38009A0AFC /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		C66083751A7702CA009A0AFC /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
-		C66083761A7702CA009A0AFC /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
-		C6A758A11A79AB3A00FCADD9 /* ATM.graph */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATM.graph; sourceTree = "<group>"; };
-		C6A758A21A79D41900FCADD9 /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
-		C6A758A31A79D41900FCADD9 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		C660836B1A759E38009A0AFC /* Search */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Search; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6A20B361A812EB9006D58EA /* ATM.graph */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ATM.graph; sourceTree = "<group>"; };
+		C6A20B371A812EB9006D58EA /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
+		C6A20B381A812EB9006D58EA /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
+		C6A20B3A1A812EB9006D58EA /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C6A20B3B1A812EB9006D58EA /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
+		C6A20B3C1A812EB9006D58EA /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
+		C6A20B3D1A812EB9006D58EA /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,7 @@
 		C66083621A759E38009A0AFC = {
 			isa = PBXGroup;
 			children = (
-				C660836D1A759E38009A0AFC /* PathFinding */,
+				C6A20B351A812EB9006D58EA /* Search */,
 				C660836C1A759E38009A0AFC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,30 +58,31 @@
 		C660836C1A759E38009A0AFC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C660836B1A759E38009A0AFC /* PathFinding */,
+				C660836B1A759E38009A0AFC /* Search */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C660836D1A759E38009A0AFC /* PathFinding */ = {
+		C6A20B351A812EB9006D58EA /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				C6A758A11A79AB3A00FCADD9 /* ATM.graph */,
-				C660836E1A759E38009A0AFC /* main.cpp */,
-				C66083751A7702CA009A0AFC /* Graph.cpp */,
-				C66083761A7702CA009A0AFC /* Graph.h */,
-				C6A758A21A79D41900FCADD9 /* Node.cpp */,
-				C6A758A31A79D41900FCADD9 /* Node.h */,
+				C6A20B361A812EB9006D58EA /* ATM.graph */,
+				C6A20B371A812EB9006D58EA /* Graph.cpp */,
+				C6A20B381A812EB9006D58EA /* Graph.h */,
+				C6A20B3A1A812EB9006D58EA /* main.cpp */,
+				C6A20B3B1A812EB9006D58EA /* makefile */,
+				C6A20B3C1A812EB9006D58EA /* Node.cpp */,
+				C6A20B3D1A812EB9006D58EA /* Node.h */,
 			);
-			path = PathFinding;
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C660836A1A759E38009A0AFC /* PathFinding */ = {
+		C660836A1A759E38009A0AFC /* Search */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C66083721A759E38009A0AFC /* Build configuration list for PBXNativeTarget "PathFinding" */;
+			buildConfigurationList = C66083721A759E38009A0AFC /* Build configuration list for PBXNativeTarget "Search" */;
 			buildPhases = (
 				C66083671A759E38009A0AFC /* Sources */,
 				C66083681A759E38009A0AFC /* Frameworks */,
@@ -89,9 +92,9 @@
 			);
 			dependencies = (
 			);
-			name = PathFinding;
+			name = Search;
 			productName = PathFinding;
-			productReference = C660836B1A759E38009A0AFC /* PathFinding */;
+			productReference = C660836B1A759E38009A0AFC /* Search */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C66083661A759E38009A0AFC /* Build configuration list for PBXProject "PathFinding" */;
+			buildConfigurationList = C66083661A759E38009A0AFC /* Build configuration list for PBXProject "Search" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -120,7 +123,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C660836A1A759E38009A0AFC /* PathFinding */,
+				C660836A1A759E38009A0AFC /* Search */,
 			);
 		};
 /* End PBXProject section */
@@ -130,9 +133,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6A758A41A79D41900FCADD9 /* Node.cpp in Sources */,
-				C66083771A7702CA009A0AFC /* Graph.cpp in Sources */,
-				C660836F1A759E38009A0AFC /* main.cpp in Sources */,
+				C6A20B3F1A812EB9006D58EA /* main.cpp in Sources */,
+				C6A20B3E1A812EB9006D58EA /* Graph.cpp in Sources */,
+				C6A20B401A812EB9006D58EA /* makefile in Sources */,
+				C6A20B411A812EB9006D58EA /* Node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,21 +220,21 @@
 		C66083731A759E38009A0AFC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Search;
 			};
 			name = Debug;
 		};
 		C66083741A759E38009A0AFC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Search;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C66083661A759E38009A0AFC /* Build configuration list for PBXProject "PathFinding" */ = {
+		C66083661A759E38009A0AFC /* Build configuration list for PBXProject "Search" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C66083701A759E38009A0AFC /* Debug */,
@@ -239,7 +243,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C66083721A759E38009A0AFC /* Build configuration list for PBXNativeTarget "PathFinding" */ = {
+		C66083721A759E38009A0AFC /* Build configuration list for PBXNativeTarget "Search" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C66083731A759E38009A0AFC /* Debug */,
