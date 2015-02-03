@@ -117,10 +117,7 @@ int main(int argc, char * argv[])
     Graph *graph = new Graph;
     graph->read(filename);
     
-    char searchAlgorithm[256];
     int startX, startY, endX, endY;
-    cout << "BFS | DFS | GBFS :";
-    cin.getline(searchAlgorithm, 256);
     
     cout << "start point: ";
     scanf ("%d %d",&startX, &startY);
@@ -149,37 +146,12 @@ int main(int argc, char * argv[])
     init->setHeur();
     Node* goal;
     
-    switch (searchAlgorithm[0]) {
-        case 'B':
-        case 'b':
-        {
-            queue<Node*> BFSfrontier;
-            goal = search(BFSfrontier, init, endI);
-            break;
-        }
-        case 'D':
-        case 'd':
-        {
-            stack<Node*> DFSfrontier;
-            goal = search(DFSfrontier, init, endI);
-            break;
-        }
-        case 'G':
-        case 'g':
-        {
-            priority_queue<Node*, vector<Node*>, compareDistance> GBFSfrontier;
-            goal = search(GBFSfrontier, init, endI);
-            break;
-        }
-        default:
-            cout << "Algorithm not correctly defined, please choose from: BFS / DFS / GBFS." << endl;
-            return 0;
-            break;
-    }
+    priority_queue<Node*, vector<Node*>, compareDistance> GBFSfrontier;
+    goal = search(GBFSfrontier, init, endI);
+    
     
     vector<Node*> path = goal->traceback();
 
-    cout << "search algorithm = " << searchAlgorithm << endl;
     cout << "path length = " << (int)path.size()-1 << endl;
     cout << "============="<<endl;
     cout << "Solution path: " << endl;
