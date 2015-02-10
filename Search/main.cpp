@@ -10,6 +10,7 @@
 #include <queue>
 #include <stack>
 
+#include "Problem.h"
 #include "Node.h"
 
 
@@ -35,7 +36,7 @@ template<> Node* nextElement(queue<Node*> frontier)
     return frontier.front(); //for stack
 }
 
-
+/*
 template <class T>
 Node* search(T frontier, Node* init, int goal)
 {
@@ -105,42 +106,42 @@ int getVertexIndex(int x, int y, Graph* g)
     }
     return index;
 }
-
+*/
 int main(int argc, char * argv[])
 {
     
-    char filename[256];
-    cout << "Please enter a graph file: ";
-    cin.getline (filename, 256);
-    cout << "Loading " << filename << endl;
+    cout << "Choose from:" << endl;
+    cout << "1. Random Problem generator  2.input file"<<endl;
+    int choice;
+    cin >> choice;
+    cin.ignore(100, '\n');
     
-    Graph *graph = new Graph;
-    graph->read(filename);
-    
-    int startX, startY, endX, endY;
-    
-    cout << "start point: ";
-    scanf ("%d %d",&startX, &startY);
-    
-    cout << "end point: ";
-    scanf("%d %d", &endX, &endY);
-    
-    int startI = getVertexIndex(startX, startY, graph);
-    if (startI == -1) {
-        cout << "start point not found!"<<endl;
+    Problem *problem;
+    if (choice == 1) {
+        int nStack, nBlock;
+        cout << "Stack number:";
+        cin >> nStack;
+        //cin.ignore(100, '\n');
+        cout << "Block number:";
+        cin >> nBlock;
+        problem = new Problem(nStack, nBlock, 20);
+    }else if (choice == 2) {
+        char filename[256];
+        cout << "Please enter file path: ";
+        cin.getline (filename, 256);
+        cout << "Loading " << filename << endl;
+        problem = new Problem(filename);
+    }else {
+        cout << "Problem not correctly defined."<<endl;
         return 0;
     }
+    cout << "problem hash string:" << problem->init->toString()<<endl;
     
-    int endI = getVertexIndex(endX, endY, graph);
-    if (endI == -1) {
-        cout << "goal point not found in graph!" << endl;
-        return 0;
-    }
     
     //init state log
-    cout << "Vertices = " << graph->nOfVertices << ", " << "edges = " << graph->nOfEdges << endl;
-    cout << "start = (" <<startX<<", "<<startY<<") , goal = ("<<endX<<", "<<endY<<"), vertices: "<<startI<<" and "<<endI<<endl;
-    
+    //cout << "Vertices = " << graph->nOfVertices << ", " << "edges = " << graph->nOfEdges << endl;
+    //cout << "start = (" <<startX<<", "<<startY<<") , goal = ("<<endX<<", "<<endY<<"), vertices: "<<startI<<" and "<<endI<<endl;
+    /*
     Node* init = new Node(startI);
     init->init(graph, endI);
     init->setHeur();
@@ -159,7 +160,7 @@ int main(int argc, char * argv[])
         cout << "vertex "<< path.at(i)->v << " ("<<graph->vertices[path.at(i)->v*2]<<", "<<graph->vertices[path.at(i)->v*2+1]<<")"<<endl;
     }
     cout << "============="<<endl;
-    
+    */
     
     
     return 0;

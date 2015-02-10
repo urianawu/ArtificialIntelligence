@@ -6,31 +6,32 @@
 //  Copyright (c) 2015 You Wu. All rights reserved.
 //
 
-#ifndef __PathFinding__Node__
-#define __PathFinding__Node__
+#ifndef __Search__Node__
+#define __Search__Node__
 
 #include <stdio.h>
 #include <vector>
+#include <stack>
+#include <string>
 #include <math.h>
 
-#include "Graph.h"
 using namespace std;
 
 class Node{
 public:
-    int v;
+    //int v;
     int depth;
     float hn;
     Node* parent;
-    static Graph* graph;
-    static int goalI;
     
-    Node(int);
-    Node(int, Node*);
+    vector<stack<char>> state;
     
-    void init(Graph*, int);
+    Node(vector<stack<char>>);
+    Node(vector<stack<char>>, Node*);
+    
     void setHeur();
-
+    string toString();
+    
     vector<Node*> successors(); //return neighbour
     vector<Node*> traceback(); // return path to root
     

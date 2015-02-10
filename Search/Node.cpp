@@ -8,45 +8,67 @@
 
 #include "Node.h"
 
-Graph* Node::graph;
-int Node::goalI;
 
-void Node::init(Graph* g, int goalIndex)
+Node::Node(vector<stack<char>> state)
 {
-    graph = g;
-    goalI = goalIndex;
-}
-
-Node::Node(int i)
-{
-    v = i;
+    //v = i;
     parent = NULL;
     depth = 0;
-
+    this->state = state;
 }
 
-Node::Node(int i, Node *p)
+Node::Node(vector<stack<char>> state, Node *p)
 {
-    v = i;
+    //v = i;
     parent = p;
     depth = p->depth + 1;
+    this->state = state;
     setHeur();
 }
 
 void Node::setHeur()
 {
     int goalX, goalY, X, Y;
+    /*
     goalX = graph->vertices[goalI*2];
     goalY = graph->vertices[goalI*2+1];
     X = graph->vertices[v*2];
     Y = graph->vertices[v*2+1];
     hn = sqrtf(powf(abs(goalX - X),2.0) + powf(abs(goalY - Y),2.0));
+     */
+}
+string Node::toString()
+{
+    string hashString = "";
+    vector<stack<char>> tmp = state;
+    for (int i = 0; i < tmp.size(); i++) {
+        while (!tmp.at(i).empty()) {
+            hashString+=tmp.at(i).top();
+            tmp.at(i).pop();
+
+        }
+        hashString+="#";
+    }
+    return hashString;
 }
 
 vector<Node*> Node::successors()
 {
     vector<Node*> nodes;
-    //check edges list
+    //loop through each pair of stacks
+    for (int i = 0; i < state.size(); i++) {
+        for (int j = 0; j < state.size(); j++) {
+            if (i != j && !state.at(i).empty()) {
+                //pick one block on stack i and put on stack j
+                vector<stack<char>> tmp = state;
+                tmp.at(j).push(tmp.at(i).top());
+                tmp.at(i).pop();
+                //set new successor node
+                nodes.push_back(new Node(tmp, this));
+            }
+        }
+    }
+    /*
     for (int i = 0; i < graph->nOfEdges * 2; i+=2) {
         if (graph->edges[i] == v){
             //cout << "i: " << i <<" v 0 x ||" << v << " | "<< graph->edges[i]<<" | "<< graph->edges[i+1]  << endl;
@@ -60,6 +82,7 @@ vector<Node*> Node::successors()
             //cout << "i-1 : " << i;
         }
     }
+     */
     return nodes;
     
 }
