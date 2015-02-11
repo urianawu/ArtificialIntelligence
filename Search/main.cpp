@@ -16,13 +16,23 @@
 
 
 using namespace std;
-struct compare
+class compare
 {
+    int heur;
+public:
+    compare(const int &heurParam = 1){heur = heurParam;}
     bool operator () ( const Node* a, const Node* b ) const
     {
         int afn, bfn;
-        afn = a->hn + a->depth;
-        bfn = b->hn + b->depth;
+        if(heur == 1){
+            //blocks out of place
+        afn = a->h1 + a->depth;
+        bfn = b->h1 + b->depth;
+        }else{
+            //blocks out of order
+        afn = a->h2 + a->depth;
+        bfn = b->h2 + b->depth;
+        }
         return afn > bfn;
     }
 };
@@ -57,7 +67,7 @@ Node* search(T frontier, Node* init, string goal)
         frontier.pop();
         
         //runtime log
-        float fn = testNode->hn+ testNode->depth;
+        float fn = testNode->h1+ testNode->depth;
         cout<<"iter="<<iter<<", frontier="<<frontier.size()
         <<", f=g+h="<<fn << ", depth="<<testNode->depth<<endl;
         
@@ -125,6 +135,10 @@ int main(int argc, char * argv[])
         return 0;
     }
     
+    int heur;
+    cout << "heuristics: "<< endl;
+    cout << "1. number of blocks out of place 2. number of adjacent blocks not in the correct order"<<endl;
+    cin >> heur;
     
     //init state log
     cout << "=============="<<endl;
@@ -139,9 +153,9 @@ int main(int argc, char * argv[])
 //    init->setHeur();
     Node* goalNode;
     string goalString(problem->goalString);
-    priority_queue<Node*, vector<Node*>, compare> ASfrontier;
+    priority_queue<Node*, vector<Node*>, compare> ASfrontier ((compare(heur)));
     goalNode = search(ASfrontier, problem->init, goalString);
-    
+
     
     vector<Node*> path = goalNode->traceback();
 

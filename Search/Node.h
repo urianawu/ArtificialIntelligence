@@ -22,7 +22,7 @@ class Node{
 public:
     //int v;
     int depth;
-    float hn;
+    float h1, h2;
     Node* parent;
     
     vector<stack<char>> state;
