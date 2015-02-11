@@ -9,17 +9,21 @@
 #include <iostream>
 #include <queue>
 #include <stack>
+#include <unordered_set>
 
 #include "Problem.h"
 #include "Node.h"
 
 
 using namespace std;
-struct compareDistance
+struct compare
 {
     bool operator () ( const Node* a, const Node* b ) const
     {
-        return a->hn > b->hn;
+        int afn, bfn;
+        afn = a->hn + a->depth;
+        bfn = b->hn + b->depth;
+        return afn > bfn;
     }
 };
 
@@ -36,17 +40,16 @@ template<> Node* nextElement(queue<Node*> frontier)
     return frontier.front(); //for stack
 }
 
-/*
+
 template <class T>
-Node* search(T frontier, Node* init, int goal)
+Node* search(T frontier, Node* init, string goal)
 {
     //runtime log parameter
     int iter = 1;
     int frontierSize = 0;
-    int* vertices = init->graph->vertices;
     
-    vector<Node*> visited;
-    visited.push_back(init);
+    unordered_set<string> visited;
+    visited.emplace(init->toString());
     frontier.push(init);
     while (!frontier.empty()) {
         Node* testNode = nextElement(frontier);
@@ -54,20 +57,19 @@ Node* search(T frontier, Node* init, int goal)
         frontier.pop();
         
         //runtime log
-        int testX, testY;
-        testX = vertices[testNode->v*2];
-        testY = vertices[testNode->v*2 + 1];
-        float dist = testNode->hn;
+        float fn = testNode->hn+ testNode->depth;
         cout<<"iter="<<iter<<", frontier="<<frontier.size()
-        <<", popped="<<testNode->v<<" ("<<testX<<", "<<testY<<"), depth="<<testNode->depth<<", dist2goal="<<dist << endl;
+        <<", f=g+h="<<fn << ", depth="<<testNode->depth<<endl;
         
         
-        if (testNode->v == goal) {
+        if (testNode->toString() == goal) {
             
             cout << "=========="<<endl;
-            cout << "total iterations = " <<iter<< endl;
-            cout << "max frontier size = " << frontierSize << endl;
-            cout << "vertices visited = "  << visited.size() << "/" << init->graph->nOfVertices<< endl;
+            cout << "Success!"<<endl;
+            cout << "depth(path length) = "<<testNode->depth<<endl;
+            cout << "total iterations(goal tests) = " <<iter<< endl;
+            cout << "max queue size = " << frontierSize << endl;
+            
             return testNode;
         }
         
@@ -75,17 +77,15 @@ Node* search(T frontier, Node* init, int goal)
         children = testNode->successors();
         for (int i = 0; i < children.size(); i++) {
             bool hasVisited = false;
-            for (int j = 0; j < visited.size(); j++) {
-                if (children.at(i)->v == visited.at(j)->v)
-                    hasVisited = true;
+            unordered_set<string>::const_iterator got = visited.find (children.at(i)->toString());
+            if ( got != visited.end() ) {
+                hasVisited = true;
             }
             if (!hasVisited) {
                 frontier.push(children.at(i));
-                visited.push_back(children.at(i));
+                visited.emplace(children.at(i)->toString());
                 
                 frontierSize = max(frontierSize, (int)frontier.size());
-                int index = children.at(i)->v;
-                cout << "pushed "<<index<<" ("<<vertices[index*2]<<", "<<vertices[index*2+1]<<")"<<endl;
 
             }
         }
@@ -96,17 +96,7 @@ Node* search(T frontier, Node* init, int goal)
 }
 
 
-int getVertexIndex(int x, int y, Graph* g)
-{
-    int index = -1;
-    for (int i = 0; i < g->nOfVertices*2; i+=2) {
-        if (x == g->vertices[i] && y == g->vertices[i+1]) {
-            index = i/2;
-        }
-    }
-    return index;
-}
-*/
+
 int main(int argc, char * argv[])
 {
     
@@ -119,48 +109,49 @@ int main(int argc, char * argv[])
     Problem *problem;
     if (choice == 1) {
         int nStack, nBlock;
-        cout << "Stack number:";
-        cin >> nStack;
-        //cin.ignore(100, '\n');
         cout << "Block number:";
         cin >> nBlock;
+        cout << "Stack number:";
+        cin >> nStack;
         problem = new Problem(nStack, nBlock, 20);
     }else if (choice == 2) {
         char filename[256];
         cout << "Please enter file path: ";
         cin.getline (filename, 256);
-        cout << "Loading " << filename << endl;
+        cout << "Loading " << filename <<"..."<< endl;
         problem = new Problem(filename);
     }else {
         cout << "Problem not correctly defined."<<endl;
         return 0;
     }
-    cout << "problem hash string:" << problem->init->toString()<<endl;
     
     
     //init state log
-    //cout << "Vertices = " << graph->nOfVertices << ", " << "edges = " << graph->nOfEdges << endl;
-    //cout << "start = (" <<startX<<", "<<startY<<") , goal = ("<<endX<<", "<<endY<<"), vertices: "<<startI<<" and "<<endI<<endl;
-    /*
-    Node* init = new Node(startI);
-    init->init(graph, endI);
-    init->setHeur();
-    Node* goal;
+    cout << "=============="<<endl;
+    cout << "initial state:"<<endl;
+    problem->init->print();
     
-    priority_queue<Node*, vector<Node*>, compareDistance> GBFSfrontier;
-    goal = search(GBFSfrontier, init, endI);
-    
-    
-    vector<Node*> path = goal->traceback();
+    cout << "hash string:" << problem->init->toString()<<endl;
 
-    cout << "path length = " << (int)path.size()-1 << endl;
+    
+//    Node* init = new Node(startI);
+//    init->init(graph, endI);
+//    init->setHeur();
+    Node* goalNode;
+    string goalString(problem->goalString);
+    priority_queue<Node*, vector<Node*>, compare> ASfrontier;
+    goalNode = search(ASfrontier, problem->init, goalString);
+    
+    
+    vector<Node*> path = goalNode->traceback();
+
     cout << "============="<<endl;
     cout << "Solution path: " << endl;
     for (int i = (int)path.size()-1; i >= 0; i--) {
-        cout << "vertex "<< path.at(i)->v << " ("<<graph->vertices[path.at(i)->v*2]<<", "<<graph->vertices[path.at(i)->v*2+1]<<")"<<endl;
+        path.at(i)->print();
+        cout << endl;
     }
-    cout << "============="<<endl;
-    */
+    
     
     
     return 0;

@@ -14,6 +14,7 @@ Node::Node(vector<stack<char>> state)
     //v = i;
     parent = NULL;
     depth = 0;
+    hn = 0;
     this->state = state;
 }
 
@@ -22,8 +23,9 @@ Node::Node(vector<stack<char>> state, Node *p)
     //v = i;
     parent = p;
     depth = p->depth + 1;
+    hn = 0;
     this->state = state;
-    setHeur();
+    //setHeur();
 }
 
 void Node::setHeur()
@@ -42,14 +44,31 @@ string Node::toString()
     string hashString = "";
     vector<stack<char>> tmp = state;
     for (int i = 0; i < tmp.size(); i++) {
+        string subString = "";
         while (!tmp.at(i).empty()) {
-            hashString+=tmp.at(i).top();
+            string s(1, tmp.at(i).top());
+            subString.insert(0, s);
             tmp.at(i).pop();
 
         }
-        hashString+="#";
+        hashString+=subString+"#";
     }
     return hashString;
+}
+
+void Node::print()
+{
+    vector<stack<char>> tmp = state;
+    for (int i = 0; i < tmp.size(); i++) {
+        cout << i+1 << " |";
+        string subString = "";
+        while (!tmp.at(i).empty()) {
+            string s(1, tmp.at(i).top());
+            subString.insert(0, " "+s);
+            tmp.at(i).pop();
+        }
+        cout << subString<<endl;
+    }
 }
 
 vector<Node*> Node::successors()

@@ -14,6 +14,7 @@
 #include <stack>
 #include <string>
 #include <math.h>
+#include <iostream>
 
 using namespace std;
 
@@ -31,6 +32,7 @@ public:
     
     void setHeur();
     string toString();
+    void print();
     
     vector<Node*> successors(); //return neighbour
     vector<Node*> traceback(); // return path to root
