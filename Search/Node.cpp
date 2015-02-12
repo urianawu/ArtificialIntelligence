@@ -13,8 +13,7 @@ Node::Node(vector<stack<char>> state)
 {
     parent = NULL;
     depth = 0;
-    h1 = 0;
-    h2 = 0;
+    hn = 0;
     this->state = state;
 }
 
@@ -23,29 +22,75 @@ Node::Node(vector<stack<char>> state, Node *p)
     parent = p;
     depth = p->depth + 1;
     this->state = state;
-    setHeur();
 }
 
-void Node::setHeur()
+void Node::calculateHeur(int choice)
 {
     string s = toString();
+    int found = (int)s.find_first_of("#");
+
     int nStack = (int)count(s.begin(), s.end(), '#');
     int nBlock = (int)s.length() - nStack;
-    
-    char letters[] ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    string letters ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
 
     //h1
-    h1 = nBlock;
-    int found = s.find_first_of("#");
-    for (int i = 0; i < found; i++) {
-        if (s[i] = letters[i]) {
-            h1--;
+    if (choice == 1) {
+        hn = nBlock;
+        for (int i = 0; i < found; i++) {
+            if (s[i] == letters[i]) {
+                hn--;
+            }
+        }
+
+    }else {
+        //h2
+        //For each block that has the correct support structure (i.e. " the complete structure underneath it is exactly as it should be), substract one point for every block in the support structure. For each block that has an incorrect support structure, add one point for every block in the existing support structure.
+        //define the correct support structure
+        //for first stack: bottom char precedes top char in letters string
+        //for rest stacks: top char precedes bottom char in letters string
+        
+        hn = nBlock*(nBlock-1)/2;
+        //first stack
+        vector<stack<char>> tmp = state;
+
+        string firstString;
+        while (!tmp.at(0).empty()) {
+            firstString.insert(0, 1, tmp.at(0).top());
+
+            tmp.at(0).pop();
+        }
+        for (int i = 1; i < firstString.length(); i++) {
+            string substr = firstString.substr(0,i+1);
+            if ((int)letters.find(substr) == 0) {
+                hn -= i;
+            }else{
+                hn += i;
+
+            }
+        }
+
+        //rest stacks
+        for (int i = 1; i < nStack; i++) {
+            s = s.substr(found+1);
+            found = (int)s.find_first_of("#");
+            for (int j = 1; j < found; j++) {
+                string substr = s.substr(0, j+1);
+                reverse(substr.begin(), substr.end());
+
+                if ((int)letters.find(substr) != string::npos) {
+                    hn -= j;
+
+                }else{
+                    hn += j;
+
+                }
+            }
+            
         }
     }
-    //h2
-    h2 = nBlock;
-    
-   }
+                
+}
 string Node::toString()
 {
     string hashString = "";
@@ -111,4 +156,24 @@ vector<Node*> Node::traceback()
         predecessor = predecessor->parent;
     }
     return nodes;
+}
+
+bool Node::isAdjacent(char a, char b)
+{
+    string letters ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+    string first;
+    first.assign(1, a);
+    
+
+    string second;
+    second.assign(1, b);
+    
+    string combined = first + second;
+    std::size_t found = letters.find(combined);
+    if (found!=std::string::npos){
+        return true;
+    }
+    
+    return false;
 }

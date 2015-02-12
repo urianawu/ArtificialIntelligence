@@ -16,23 +16,15 @@
 
 
 using namespace std;
-class compare
+struct compare
 {
-    int heur;
-public:
-    compare(const int &heurParam = 1){heur = heurParam;}
     bool operator () ( const Node* a, const Node* b ) const
     {
         int afn, bfn;
-        if(heur == 1){
-            //blocks out of place
-        afn = a->h1 + a->depth;
-        bfn = b->h1 + b->depth;
-        }else{
-            //blocks out of order
-        afn = a->h2 + a->depth;
-        bfn = b->h2 + b->depth;
-        }
+        
+        afn = a->hn + a->depth;
+        bfn = b->hn + b->depth;
+
         return afn > bfn;
     }
 };
@@ -52,7 +44,7 @@ template<> Node* nextElement(queue<Node*> frontier)
 
 
 template <class T>
-Node* search(T frontier, Node* init, string goal)
+Node* search(T frontier, Node* init, string goal, int heur)
 {
     //runtime log parameter
     int iter = 1;
@@ -63,14 +55,13 @@ Node* search(T frontier, Node* init, string goal)
     frontier.push(init);
     while (!frontier.empty()) {
         Node* testNode = nextElement(frontier);
-        //Node* testNode = frontier.top();
+
         frontier.pop();
         
         //runtime log
-        float fn = testNode->h1+ testNode->depth;
+        float fn = testNode->hn + testNode->depth;
         cout<<"iter="<<iter<<", frontier="<<frontier.size()
-        <<", f=g+h="<<fn << ", depth="<<testNode->depth<<endl;
-        
+        <<", f=g+h="<<fn <<", h="<<testNode->hn<< ", depth="<<testNode->depth<<endl;
         
         if (testNode->toString() == goal) {
             
@@ -92,6 +83,7 @@ Node* search(T frontier, Node* init, string goal)
                 hasVisited = true;
             }
             if (!hasVisited) {
+                children.at(i)->calculateHeur(heur);
                 frontier.push(children.at(i));
                 visited.emplace(children.at(i)->toString());
                 
@@ -123,7 +115,7 @@ int main(int argc, char * argv[])
         cin >> nBlock;
         cout << "Stack number:";
         cin >> nStack;
-        problem = new Problem(nStack, nBlock, 20);
+        problem = new Problem(nStack, nBlock, 10*nBlock);
     }else if (choice == 2) {
         char filename[256];
         cout << "Please enter file path: ";
@@ -153,8 +145,8 @@ int main(int argc, char * argv[])
 //    init->setHeur();
     Node* goalNode;
     string goalString(problem->goalString);
-    priority_queue<Node*, vector<Node*>, compare> ASfrontier ((compare(heur)));
-    goalNode = search(ASfrontier, problem->init, goalString);
+    priority_queue<Node*, vector<Node*>, compare> ASfrontier;
+    goalNode = search(ASfrontier, problem->init, goalString, heur);
 
     
     vector<Node*> path = goalNode->traceback();

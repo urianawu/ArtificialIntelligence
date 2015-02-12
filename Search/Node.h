@@ -22,7 +22,7 @@ class Node{
 public:
     //int v;
     int depth;
-    float h1, h2;
+    float hn;
     Node* parent;
     
     vector<stack<char>> state;
@@ -30,12 +30,14 @@ public:
     Node(vector<stack<char>>);
     Node(vector<stack<char>>, Node*);
     
-    void setHeur();
+    void calculateHeur(int);
     string toString();
     void print();
     
     vector<Node*> successors(); //return neighbour
     vector<Node*> traceback(); // return path to root
+private:
+    bool isAdjacent(char a, char b);
     
 };
 #endif /* defined(__PathFinding__Node__) */
