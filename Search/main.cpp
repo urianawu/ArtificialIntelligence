@@ -88,6 +88,9 @@ Node* search(T frontier, Node* init, string goal, int heur)
                 visited.emplace(children.at(i)->toString());
                 
                 frontierSize = max(frontierSize, (int)frontier.size());
+                if (frontierSize > 100000) {
+                    exit(EXIT_FAILURE);
+                }
 
             }
         }

@@ -9,7 +9,7 @@
 #include "Node.h"
 
 
-Node::Node(vector<stack<char>> state)
+Node::Node(vector<stack<char> > state)
 {
     parent = NULL;
     depth = 0;
@@ -17,7 +17,7 @@ Node::Node(vector<stack<char>> state)
     this->state = state;
 }
 
-Node::Node(vector<stack<char>> state, Node *p)
+Node::Node(vector<stack<char> > state, Node *p)
 {
     parent = p;
     depth = p->depth + 1;
@@ -52,7 +52,7 @@ void Node::calculateHeur(int choice)
         
         hn = nBlock*(nBlock-1)/2;
         //first stack
-        vector<stack<char>> tmp = state;
+        vector<stack<char> > tmp = state;
 
         string firstString;
         while (!tmp.at(0).empty()) {
@@ -94,7 +94,7 @@ void Node::calculateHeur(int choice)
 string Node::toString()
 {
     string hashString = "";
-    vector<stack<char>> tmp = state;
+    vector<stack<char> > tmp = state;
     for (int i = 0; i < tmp.size(); i++) {
         string subString = "";
         while (!tmp.at(i).empty()) {
@@ -110,7 +110,7 @@ string Node::toString()
 
 void Node::print()
 {
-    vector<stack<char>> tmp = state;
+    vector<stack<char> > tmp = state;
     for (int i = 0; i < tmp.size(); i++) {
         cout << i+1 << " |";
         string subString = "";
@@ -131,7 +131,7 @@ vector<Node*> Node::successors()
         for (int j = 0; j < state.size(); j++) {
             if (i != j && !state.at(i).empty()) {
                 //pick one block on stack i and put on stack j
-                vector<stack<char>> tmp = state;
+                vector<stack<char> > tmp = state;
                 tmp.at(j).push(tmp.at(i).top());
                 tmp.at(i).pop();
                 //set new successor node

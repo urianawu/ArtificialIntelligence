@@ -25,10 +25,10 @@ public:
     float hn;
     Node* parent;
     
-    vector<stack<char>> state;
+    vector<stack<char> > state;
     
-    Node(vector<stack<char>>);
-    Node(vector<stack<char>>, Node*);
+    Node(vector<stack<char> >);
+    Node(vector<stack<char> >, Node*);
     
     void calculateHeur(int);
     string toString();

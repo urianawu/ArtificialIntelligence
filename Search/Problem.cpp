@@ -33,7 +33,7 @@ Problem::Problem(char* filename)
     if (file == NULL) {
         perror ("Error opening file");
     }else{
-        vector<stack<char>> state;
+        vector<stack<char> > state;
 
         //string hashString = "";
         char nOfStack[80];
@@ -71,10 +71,10 @@ Problem::Problem(char* filename)
 
 }
 
-vector<stack<char>> Problem::setGoalState(){
+vector<stack<char> > Problem::setGoalState(){
     char letters[] ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     //init goal state node
-    vector<stack<char>> goalState;
+    vector<stack<char> > goalState;
     stack<char> firstStack;
     
     for (int i = 0; i < nBlock; i++) {

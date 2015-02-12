@@ -28,7 +28,7 @@ public:
     Problem(char * filename); //problem from file
     
 private:
-    vector<stack<char>> setGoalState();
+    vector<stack<char> > setGoalState();
     int getN(char* line);
 };
 #endif /* defined(__Search__Problem__) */

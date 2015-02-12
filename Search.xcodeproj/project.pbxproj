@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6A20B3E1A812EB9006D58EA /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A20B371A812EB9006D58EA /* Graph.cpp */; };
 		C6A20B3F1A812EB9006D58EA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A20B3A1A812EB9006D58EA /* main.cpp */; };
 		C6A20B411A812EB9006D58EA /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A20B3C1A812EB9006D58EA /* Node.cpp */; };
 		C6A6176E1A84098F00F260A4 /* Problem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A6176C1A84098F00F260A4 /* Problem.cpp */; };
@@ -27,8 +26,6 @@
 
 /* Begin PBXFileReference section */
 		C660836B1A759E38009A0AFC /* Search */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Search; sourceTree = BUILT_PRODUCTS_DIR; };
-		C6A20B371A812EB9006D58EA /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graph.cpp; sourceTree = "<group>"; };
-		C6A20B381A812EB9006D58EA /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
 		C6A20B3A1A812EB9006D58EA /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6A20B3C1A812EB9006D58EA /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
 		C6A20B3D1A812EB9006D58EA /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
@@ -70,8 +67,6 @@
 				C6A6176F1A84219500F260A4 /* problem */,
 				C6A6176C1A84098F00F260A4 /* Problem.cpp */,
 				C6A6176D1A84098F00F260A4 /* Problem.h */,
-				C6A20B371A812EB9006D58EA /* Graph.cpp */,
-				C6A20B381A812EB9006D58EA /* Graph.h */,
 				C6A20B3A1A812EB9006D58EA /* main.cpp */,
 				C6A20B3C1A812EB9006D58EA /* Node.cpp */,
 				C6A20B3D1A812EB9006D58EA /* Node.h */,
@@ -136,7 +131,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A20B3F1A812EB9006D58EA /* main.cpp in Sources */,
-				C6A20B3E1A812EB9006D58EA /* Graph.cpp in Sources */,
 				C6A6176E1A84098F00F260A4 /* Problem.cpp in Sources */,
 				C6A20B411A812EB9006D58EA /* Node.cpp in Sources */,
 			);
