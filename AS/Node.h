@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 You Wu. All rights reserved.
 //
 
-#ifndef __Search__Node__
-#define __Search__Node__
+#ifndef __AS__Node__
+#define __AS__Node__
 
 #include <stdio.h>
 #include <vector>

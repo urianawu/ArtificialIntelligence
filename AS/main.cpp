@@ -92,6 +92,7 @@ Node* search(T frontier, Node* init, string goal, int heur)
                     exit(EXIT_FAILURE);
                 }
 
+                
             }
         }
         iter++;
@@ -154,13 +155,13 @@ int main(int argc, char * argv[])
     
     vector<Node*> path = goalNode->traceback();
 
-    cout << "============="<<endl;
-    cout << "Solution path: " << endl;
-    for (int i = (int)path.size()-1; i >= 0; i--) {
-        path.at(i)->print();
-        cout << endl;
-    }
-    
+//    cout << "============="<<endl;
+//    cout << "Solution path: " << endl;
+//    for (int i = (int)path.size()-1; i >= 0; i--) {
+//        path.at(i)->print();
+//        cout << endl;
+//    }
+//    
     
     
     return 0;

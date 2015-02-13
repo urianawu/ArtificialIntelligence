@@ -1,9 +1,9 @@
 
 
 CC		= g++
-LDFLAGS 	= -lm
+LDFLAGS 	= -lm -std=c++11
 PROJECT		= main
-FILES		= main.cpp Graph.cpp Node.cpp Problem.cpp
+FILES		= main.cpp Node.cpp Problem.cpp
 
 ${PROJECT}:${FILES}
 	${CC} ${CFLAGS} -o ${PROJECT} ${FILES} ${LDFLAGS}

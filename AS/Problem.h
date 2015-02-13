@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 You Wu. All rights reserved.
 //
 
-#ifndef __Search__Problem__
-#define __Search__Problem__
+#ifndef __AS__Problem__
+#define __AS__Problem__
 
 #include <stdio.h>
 #include <iostream>
