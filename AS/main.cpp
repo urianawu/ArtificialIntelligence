@@ -9,9 +9,8 @@
 #include <iostream>
 #include <queue>
 #include <stack>
-#include <unordered_set>
 
-#include "Problem.h"
+#include "SearchSpace.h"
 #include "Node.h"
 
 
@@ -42,7 +41,7 @@ template<> Node* nextElement(queue<Node*> frontier)
     return frontier.front(); //for stack
 }
 
-
+/*
 template <class T>
 Node* search(T frontier, Node* init, string goal, int heur)
 {
@@ -101,59 +100,37 @@ Node* search(T frontier, Node* init, string goal, int heur)
     return NULL;
 }
 
-
+*/
 
 int main(int argc, char * argv[])
 {
     
-    cout << "Choose from:" << endl;
-    cout << "1. Random Problem generator  2.input file"<<endl;
-    int choice;
-    cin >> choice;
-    cin.ignore(100, '\n');
+    SearchSpace* txCities = new SearchSpace;
+    txCities->read("texas-cities.dat");
     
-    Problem *problem;
-    if (choice == 1) {
-        int nStack, nBlock;
-        cout << "Block number:";
-        cin >> nBlock;
-        cout << "Stack number:";
-        cin >> nStack;
-        problem = new Problem(nStack, nBlock, 10*nBlock);
-    }else if (choice == 2) {
-        char filename[256];
-        cout << "Please enter file path: ";
-        cin.getline (filename, 256);
-        cout << "Loading " << filename <<"..."<< endl;
-        problem = new Problem(filename);
-    }else {
-        cout << "Problem not correctly defined."<<endl;
-        return 0;
-    }
-    
-    int heur;
-    cout << "heuristics: "<< endl;
-    cout << "1. number of blocks out of place 2. number of adjacent blocks not in the correct order"<<endl;
-    cin >> heur;
-    
-    //init state log
-    cout << "=============="<<endl;
-    cout << "initial state:"<<endl;
-    problem->init->print();
-    
-    cout << "hash string:" << problem->init->toString()<<endl;
-
-    
-//    Node* init = new Node(startI);
-//    init->init(graph, endI);
-//    init->setHeur();
-    Node* goalNode;
-    string goalString(problem->goalString);
-    priority_queue<Node*, vector<Node*>, compare> ASfrontier;
-    goalNode = search(ASfrontier, problem->init, goalString, heur);
-
-    
-    vector<Node*> path = goalNode->traceback();
+//    int heur;
+//    cout << "heuristics: "<< endl;
+//    cout << "1. number of blocks out of place 2. number of adjacent blocks not in the correct order"<<endl;
+//    cin >> heur;
+//    
+//    //init state log
+//    cout << "=============="<<endl;
+//    cout << "initial state:"<<endl;
+//    problem->init->print();
+//    
+//    cout << "hash string:" << problem->init->toString()<<endl;
+//
+//    
+////    Node* init = new Node(startI);
+////    init->init(graph, endI);
+////    init->setHeur();
+//    Node* goalNode;
+//    string goalString(problem->goalString);
+//    priority_queue<Node*, vector<Node*>, compare> ASfrontier;
+//    goalNode = search(ASfrontier, problem->init, goalString, heur);
+//
+//    
+//    vector<Node*> path = goalNode->traceback();
 
 //    cout << "============="<<endl;
 //    cout << "Solution path: " << endl;

@@ -25,19 +25,20 @@ public:
     float hn;
     Node* parent;
     
-    vector<stack<char> > state;
+    string city;
+    float* pos;
     
-    Node(vector<stack<char> >);
-    Node(vector<stack<char> >, Node*);
+    Node(string, float*);
+    Node(string, float*, Node*);
     
     void calculateHeur(int);
-    string toString();
-    void print();
+    //string toString();
+    //void print();
     
     vector<Node*> successors(); //return neighbour
     vector<Node*> traceback(); // return path to root
 private:
-    bool isAdjacent(char a, char b);
+    //bool isAdjacent(char a, char b);
     
 };
 #endif /* defined(__PathFinding__Node__) */

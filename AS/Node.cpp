@@ -9,21 +9,25 @@
 #include "Node.h"
 
 
-Node::Node(vector<stack<char> > state)
+Node::Node(string city, float* pos)
 {
     parent = NULL;
     depth = 0;
     hn = 0;
-    this->state = state;
+    this->city = city;
+    this->pos = pos;
 }
 
-Node::Node(vector<stack<char> > state, Node *p)
+Node::Node(string city, float* pos, Node *p)
 {
     parent = p;
     depth = p->depth + 1;
-    this->state = state;
+    this->city = city;
+    this->pos = pos;
+
 }
 
+/*
 void Node::calculateHeur(int choice)
 {
     string s = toString();
@@ -91,6 +95,7 @@ void Node::calculateHeur(int choice)
     }
                 
 }
+ 
 string Node::toString()
 {
     string hashString = "";
@@ -143,7 +148,7 @@ vector<Node*> Node::successors()
     return nodes;
     
 }
-
+*/
 vector<Node*> Node::traceback()
 {
     vector<Node*> nodes;
@@ -157,7 +162,7 @@ vector<Node*> Node::traceback()
     }
     return nodes;
 }
-
+/*
 bool Node::isAdjacent(char a, char b)
 {
     string letters ="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -177,3 +182,4 @@ bool Node::isAdjacent(char a, char b)
     
     return false;
 }
+*/

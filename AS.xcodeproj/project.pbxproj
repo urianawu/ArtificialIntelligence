@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C67C7C011A923FAA00ACE4D2 /* SearchSpace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C67C7BFF1A923FAA00ACE4D2 /* SearchSpace.cpp */; };
 		C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE65981A8E6E46003EC72A /* main.cpp */; };
-		C6DE659F1A8E6E46003EC72A /* makefile in Sources */ = {isa = PBXBuildFile; fileRef = C6DE65991A8E6E46003EC72A /* makefile */; };
 		C6DE65A01A8E6E46003EC72A /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659A1A8E6E46003EC72A /* Node.cpp */; };
-		C6DE65A11A8E6E46003EC72A /* Problem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659C1A8E6E46003EC72A /* Problem.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -26,6 +25,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C67C7BFF1A923FAA00ACE4D2 /* SearchSpace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SearchSpace.cpp; sourceTree = "<group>"; };
+		C67C7C001A923FAA00ACE4D2 /* SearchSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSpace.h; sourceTree = "<group>"; };
+		C67C7C021A923FDF00ACE4D2 /* texas-cities.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "texas-cities.dat"; sourceTree = "<group>"; };
 		C6DE658E1A8E6DC3003EC72A /* AS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AS; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE65981A8E6E46003EC72A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6DE65991A8E6E46003EC72A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
@@ -65,12 +67,15 @@
 		C6DE65901A8E6DC3003EC72A /* AS */ = {
 			isa = PBXGroup;
 			children = (
+				C67C7C021A923FDF00ACE4D2 /* texas-cities.dat */,
 				C6DE65981A8E6E46003EC72A /* main.cpp */,
 				C6DE65991A8E6E46003EC72A /* makefile */,
 				C6DE659A1A8E6E46003EC72A /* Node.cpp */,
 				C6DE659B1A8E6E46003EC72A /* Node.h */,
 				C6DE659C1A8E6E46003EC72A /* Problem.cpp */,
 				C6DE659D1A8E6E46003EC72A /* Problem.h */,
+				C67C7BFF1A923FAA00ACE4D2 /* SearchSpace.cpp */,
+				C67C7C001A923FAA00ACE4D2 /* SearchSpace.h */,
 			);
 			path = AS;
 			sourceTree = "<group>";
@@ -131,9 +136,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C67C7C011A923FAA00ACE4D2 /* SearchSpace.cpp in Sources */,
 				C6DE65A01A8E6E46003EC72A /* Node.cpp in Sources */,
-				C6DE65A11A8E6E46003EC72A /* Problem.cpp in Sources */,
-				C6DE659F1A8E6E46003EC72A /* makefile in Sources */,
 				C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
