@@ -15,22 +15,9 @@
 
 
 using namespace std;
-struct compare
-{
-    bool operator () ( const Node* a, const Node* b ) const
-    {
-        int afn, bfn;
-        
-        afn = a->hn + a->depth;
-        bfn = b->hn + b->depth;
-
-        return afn > bfn;
-    }
-};
-
 //GET frontier next element
 //slightly different for queue and stack
-template <class T>
+/*template <class T>
 Node* nextElement(T frontier)
 {
     return frontier.top(); // for stack and priority_queue
@@ -41,7 +28,7 @@ template<> Node* nextElement(queue<Node*> frontier)
     return frontier.front(); //for stack
 }
 
-/*
+
 template <class T>
 Node* search(T frontier, Node* init, string goal, int heur)
 {
@@ -101,26 +88,49 @@ Node* search(T frontier, Node* init, string goal, int heur)
 }
 
 */
-
+float schedule(int t)
+{
+    if (30 - 0.00001*t > 0) {
+        return 30 - 0.00001*t;
+    }else
+        return 0;
+}
+/*
+Node* simulatedAnnealing(cityMap map)
+{
+    Node* current = new Node(map);
+    for (int t = 1; t < 1000000; t++) {
+        float T = schedule(t);
+        if (T == 0) {
+            return current;
+        }
+        Node* next = (current->successors()).at(rand()/RAND_MAX);
+        float deltaE = next->value - current->value;
+        if (deltaE > 0) {
+            current = next;
+        }else {
+            srand((int)time(NULL));
+            float randomNumber = (double)rand() / RAND_MAX;
+            float prob = exp(deltaE/T);
+            if (randomNumber <= prob) {
+                current = next;
+            }
+        }
+    }
+    return NULL;
+    
+}
+*/
 int main(int argc, char * argv[])
 {
     
-    SearchSpace* txCities = new SearchSpace;
-    txCities->read("texas-cities.dat");
+    SearchSpace* txMap = new SearchSpace;
+    char dataFile[80] = "texas-cities.dat";
+    txMap->read(dataFile);
+    cout << "loading "<<dataFile<<endl;
+    Node* current = new Node(txMap->txCities);
+
     
-//    int heur;
-//    cout << "heuristics: "<< endl;
-//    cout << "1. number of blocks out of place 2. number of adjacent blocks not in the correct order"<<endl;
-//    cin >> heur;
-//    
-//    //init state log
-//    cout << "=============="<<endl;
-//    cout << "initial state:"<<endl;
-//    problem->init->print();
-//    
-//    cout << "hash string:" << problem->init->toString()<<endl;
-//
-//    
 ////    Node* init = new Node(startI);
 ////    init->init(graph, endI);
 ////    init->setHeur();

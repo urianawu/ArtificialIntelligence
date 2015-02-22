@@ -15,15 +15,14 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <unordered_map>
+#include <map>
 
 using namespace std;
-typedef unordered_map<string,float*> cityMap;
+typedef map<string, pair<float, float> > cityMap;
 
 class SearchSpace
 {
 public:
-    int nOfCities;
     cityMap txCities;
     
     void read(char * filename);

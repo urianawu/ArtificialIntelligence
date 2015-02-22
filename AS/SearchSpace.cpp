@@ -12,8 +12,9 @@ void SearchSpace::read(char* filename)
 {
     ifstream infile(filename);
     string str;
-    float a, b;
-    while(infile >> str >> a >> b) {
-        cout << str << " | " <<a<<" "<<b<<endl;
+    float pos[2];
+    while(infile >> str >> pos[0] >> pos[1]) {
+        txCities.emplace(str, make_pair(pos[0], pos[1]));
     }
+    
 }

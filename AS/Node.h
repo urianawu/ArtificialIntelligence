@@ -16,28 +16,28 @@
 #include <math.h>
 #include <iostream>
 
+#include "SearchSpace.h"
 using namespace std;
 
 class Node{
 public:
     //int v;
     int depth;
-    float hn;
+    double value;
     Node* parent;
     
-    string city;
-    float* pos;
+    cityMap state;
     
-    Node(string, float*);
-    Node(string, float*, Node*);
+    Node(cityMap);
+    Node(cityMap, Node*);
     
-    void calculateHeur(int);
-    //string toString();
+    double distance(cityMap);
     //void print();
     
     vector<Node*> successors(); //return neighbour
     vector<Node*> traceback(); // return path to root
 private:
+    double degreeToRad(double);
     //bool isAdjacent(char a, char b);
     
 };
