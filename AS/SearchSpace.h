@@ -15,10 +15,17 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-#include <map>
+#include <vector>
 
 using namespace std;
-typedef map<string, pair<float, float> > cityMap;
+
+struct city {
+    string name;
+    float lat;
+    float lon;
+};
+
+typedef vector<city> cityMap;
 
 class SearchSpace
 {

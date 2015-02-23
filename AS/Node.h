@@ -32,9 +32,9 @@ public:
     Node(cityMap, Node*);
     
     double distance(cityMap);
-    //void print();
+    void print();
     
-    vector<Node*> successors(); //return neighbour
+    Node* successor(); //return neighbour
     vector<Node*> traceback(); // return path to root
 private:
     double degreeToRad(double);

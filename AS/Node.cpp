@@ -21,6 +21,7 @@ Node::Node(cityMap state, Node *p)
 {
     parent = p;
     depth = p->depth + 1;
+    value = distance(state);
     this->state = state;
     
 }
@@ -28,20 +29,19 @@ Node::Node(cityMap state, Node *p)
 double Node::distance(cityMap state)
 {
     double d = 0;
-    for(auto x1 = state.begin(); x1 != state.end(); x1++) {
+    for(int x1 = 0; x1 < state.size(); x1++) {
 
-        cout << x1->first << " to ";
-        double lat1 = degreeToRad(x1->second.first);
-        double lon1 = degreeToRad(x1->second.second);
+        //cout << state.at(x1).name << " to ";
+        double lat1 = degreeToRad(state.at(x1).lat);
+        double lon1 = degreeToRad(state.at(x1).lon);
         
-        
-        auto x2 = std::next(x1);
-        if (x1 == prev(state.end())) {
-            x2 = state.begin();
+        int x2 = x1+1;
+        if (x1 == state.size()-1) {
+            x2 = 0;
         }
-        cout << x2->first << " is ";
-        double lat2 = degreeToRad(x2->second.first);
-        double lon2 = degreeToRad(x2->second.second);
+        //cout << state.at(x2).name << " is ";
+        double lat2 = degreeToRad(state.at(x2).lat);
+        double lon2 = degreeToRad(state.at(x2).lon);
         
         
         double dlon = lon2 - lon1;
@@ -49,7 +49,7 @@ double Node::distance(cityMap state)
         double a = pow((sin(dlat/2.0)), 2.0) + cos(lat1) * cos(lat2) * pow((sin(dlon/2.0)), 2.0);
         double c = 2.0 * atan2( sqrt(a), sqrt(1-a) );
         d += floor(3961 * c * 10.0) / 10.0 ;
-        cout << d <<endl;
+        //cout << d <<endl;
     }
     
     return d;
@@ -61,45 +61,35 @@ double Node::degreeToRad(double deg)
     return deg*3.14159/180.0;
 }
 
-/*
+
  
- void Node::print()
- {
- vector<stack<char> > tmp = state;
- for (int i = 0; i < tmp.size(); i++) {
- cout << i+1 << " |";
- string subString = "";
- while (!tmp.at(i).empty()) {
- string s(1, tmp.at(i).top());
- subString.insert(0, " "+s);
- tmp.at(i).pop();
- }
- cout << subString<<endl;
- }
- }
- */
-/*
-vector<Node*> Node::successors()
+void Node::print()
 {
-    vector<Node*> nodes;
-    //loop through each pair of stacks
-    for (int i = 0; i < state.size(); i++) {
-        for (int j = 0; j < state.size(); j++) {
-            if (i != j && !state.at(i).empty()) {
-                //pick one block on stack i and put on stack j
-                vector<stack<char> > tmp = state;
-                tmp.at(j).push(tmp.at(i).top());
-                tmp.at(i).pop();
-                //set new successor node
-                nodes.push_back(new Node(tmp, this));
-            }
-        }
+    for (auto it: state) {
+        cout << it.name << " | ";
     }
+    cout << endl;
+}
+
+
+Node* Node::successor()
+{
+    cityMap newState = state;
     
-    return nodes;
+        int i =  std::rand() % ( newState.size() );
+        int j = ( std::rand() % ( newState.size() - i ) );
+        swap(newState.at(i), newState.at(i+j));
+
+    
+    for (auto it:newState) {
+        //cout << (it).name << " | ";
+    }
+    //cout<<endl;
+    Node* scr = new Node(newState, this);
+    return scr;
     
 }
-*/
+
 vector<Node*> Node::traceback()
 {
     vector<Node*> nodes;
