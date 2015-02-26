@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C67C7C011A923FAA00ACE4D2 /* SearchSpace.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C67C7BFF1A923FAA00ACE4D2 /* SearchSpace.cpp */; };
+		C6678F591A9F926C00EFA93B /* Problem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659C1A8E6E46003EC72A /* Problem.cpp */; };
 		C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE65981A8E6E46003EC72A /* main.cpp */; };
 		C6DE65A01A8E6E46003EC72A /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659A1A8E6E46003EC72A /* Node.cpp */; };
 /* End PBXBuildFile section */
@@ -27,8 +27,7 @@
 /* Begin PBXFileReference section */
 		C67C7BFF1A923FAA00ACE4D2 /* SearchSpace.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SearchSpace.cpp; sourceTree = "<group>"; };
 		C67C7C001A923FAA00ACE4D2 /* SearchSpace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchSpace.h; sourceTree = "<group>"; };
-		C67C7C021A923FDF00ACE4D2 /* texas-cities.dat */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "texas-cities.dat"; sourceTree = "<group>"; };
-		C6DE658E1A8E6DC3003EC72A /* AS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AS; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6DE658E1A8E6DC3003EC72A /* CSP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSP; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE65981A8E6E46003EC72A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6DE65991A8E6E46003EC72A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 		C6DE659A1A8E6E46003EC72A /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
@@ -51,7 +50,7 @@
 		C6DE65851A8E6DC3003EC72A = {
 			isa = PBXGroup;
 			children = (
-				C6DE65901A8E6DC3003EC72A /* AS */,
+				C6DE65901A8E6DC3003EC72A /* CSP */,
 				C6DE658F1A8E6DC3003EC72A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,15 +58,14 @@
 		C6DE658F1A8E6DC3003EC72A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6DE658E1A8E6DC3003EC72A /* AS */,
+				C6DE658E1A8E6DC3003EC72A /* CSP */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6DE65901A8E6DC3003EC72A /* AS */ = {
+		C6DE65901A8E6DC3003EC72A /* CSP */ = {
 			isa = PBXGroup;
 			children = (
-				C67C7C021A923FDF00ACE4D2 /* texas-cities.dat */,
 				C6DE65981A8E6E46003EC72A /* main.cpp */,
 				C6DE65991A8E6E46003EC72A /* makefile */,
 				C6DE659A1A8E6E46003EC72A /* Node.cpp */,
@@ -77,15 +75,15 @@
 				C67C7BFF1A923FAA00ACE4D2 /* SearchSpace.cpp */,
 				C67C7C001A923FAA00ACE4D2 /* SearchSpace.h */,
 			);
-			path = AS;
+			path = CSP;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C6DE658D1A8E6DC3003EC72A /* AS */ = {
+		C6DE658D1A8E6DC3003EC72A /* CSP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "AS" */;
+			buildConfigurationList = C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "CSP" */;
 			buildPhases = (
 				C6DE658A1A8E6DC3003EC72A /* Sources */,
 				C6DE658B1A8E6DC3003EC72A /* Frameworks */,
@@ -95,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = AS;
+			name = CSP;
 			productName = AS;
-			productReference = C6DE658E1A8E6DC3003EC72A /* AS */;
+			productReference = C6DE658E1A8E6DC3003EC72A /* CSP */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "AS" */;
+			buildConfigurationList = C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "CSP" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -126,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6DE658D1A8E6DC3003EC72A /* AS */,
+				C6DE658D1A8E6DC3003EC72A /* CSP */,
 			);
 		};
 /* End PBXProject section */
@@ -136,7 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C67C7C011A923FAA00ACE4D2 /* SearchSpace.cpp in Sources */,
+				C6678F591A9F926C00EFA93B /* Problem.cpp in Sources */,
 				C6DE65A01A8E6E46003EC72A /* Node.cpp in Sources */,
 				C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */,
 			);
@@ -222,21 +220,21 @@
 		C6DE65961A8E6DC3003EC72A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CSP;
 			};
 			name = Debug;
 		};
 		C6DE65971A8E6DC3003EC72A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CSP;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "AS" */ = {
+		C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "CSP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6DE65931A8E6DC3003EC72A /* Debug */,
@@ -245,7 +243,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "AS" */ = {
+		C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "CSP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6DE65961A8E6DC3003EC72A /* Debug */,
