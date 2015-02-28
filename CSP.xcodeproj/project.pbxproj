@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6678F591A9F926C00EFA93B /* Problem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659C1A8E6E46003EC72A /* Problem.cpp */; };
+		C6678F591A9F926C00EFA93B /* ProblemJobs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659C1A8E6E46003EC72A /* ProblemJobs.cpp */; };
 		C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE65981A8E6E46003EC72A /* main.cpp */; };
-		C6DE65A01A8E6E46003EC72A /* Node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659A1A8E6E46003EC72A /* Node.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,10 +29,8 @@
 		C6DE658E1A8E6DC3003EC72A /* CSP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSP; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE65981A8E6E46003EC72A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6DE65991A8E6E46003EC72A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		C6DE659A1A8E6E46003EC72A /* Node.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Node.cpp; sourceTree = "<group>"; };
-		C6DE659B1A8E6E46003EC72A /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
-		C6DE659C1A8E6E46003EC72A /* Problem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Problem.cpp; sourceTree = "<group>"; };
-		C6DE659D1A8E6E46003EC72A /* Problem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Problem.h; sourceTree = "<group>"; };
+		C6DE659C1A8E6E46003EC72A /* ProblemJobs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProblemJobs.cpp; sourceTree = "<group>"; };
+		C6DE659D1A8E6E46003EC72A /* ProblemJobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemJobs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +65,8 @@
 			children = (
 				C6DE65981A8E6E46003EC72A /* main.cpp */,
 				C6DE65991A8E6E46003EC72A /* makefile */,
-				C6DE659A1A8E6E46003EC72A /* Node.cpp */,
-				C6DE659B1A8E6E46003EC72A /* Node.h */,
-				C6DE659C1A8E6E46003EC72A /* Problem.cpp */,
-				C6DE659D1A8E6E46003EC72A /* Problem.h */,
+				C6DE659C1A8E6E46003EC72A /* ProblemJobs.cpp */,
+				C6DE659D1A8E6E46003EC72A /* ProblemJobs.h */,
 				C67C7BFF1A923FAA00ACE4D2 /* SearchSpace.cpp */,
 				C67C7C001A923FAA00ACE4D2 /* SearchSpace.h */,
 			);
@@ -134,8 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6678F591A9F926C00EFA93B /* Problem.cpp in Sources */,
-				C6DE65A01A8E6E46003EC72A /* Node.cpp in Sources */,
+				C6678F591A9F926C00EFA93B /* ProblemJobs.cpp in Sources */,
 				C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
