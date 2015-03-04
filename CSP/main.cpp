@@ -62,9 +62,24 @@ Map backTrackingSearch(Problem* csp)
 
 int main(int argc, char * argv[])
 {
+    cout<<"Problem 1 or 2 (enter number only): ";
+    int choice;
+    cin >> choice;
+
+    Map result;
     ProblemJobs* p1 = new ProblemJobs();
     ProblemHouse* p2 = new ProblemHouse();
-    Map result = backTrackingSearch(p2);
+
+    switch (choice) {
+        case 1:
+            result = backTrackingSearch(p1);
+            break;
+        case 2:
+            result = backTrackingSearch(p2);
+            break;
+        default:
+            break;
+    }
     cout<<"=========\nPuzzle result:"<<endl;
     if (result.empty()) {
         cout << "FAIL"<<endl;
