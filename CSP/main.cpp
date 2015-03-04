@@ -11,62 +11,71 @@
 #include <stack>
 
 #include "ProblemJobs.h"
-#define JOB_NUMBER 2
+#include "ProblemHouse.h"
 
 using namespace std;
 
-string selectUnassignedVariable(vector<string> variables, jobMap assignment)
+string selectUnassignedVariable(vector<string> variables, Map assignment)
 {
     for (int i = 0; i < variables.size(); i++) {
-        if (assignment.count(variables[i]) < JOB_NUMBER) {
+        if (assignment.find(variables[i]) == assignment.end()) {
             return variables[i];
         }
     }
     return "null";
 }
 
-jobMap recursiveBackTracking(jobMap assignment, ProblemJobs* csp)
+template <class Problem>
+Map recursiveBackTracking(Map assignment, Problem* csp)
 {
-    if (assignment.size() == JOB_NUMBER * csp->getVariables().size()) {
+    if (assignment.size() == csp->getVariables().size()) {
         return assignment;
     }
-    cout << assignment.size()<<" | ";
-
+    //cout << assignment.size()<<" | ";
+    
     string var = selectUnassignedVariable(csp->getVariables(), assignment);
-    cout << var<<endl;
+    cout << "next var : "<<var<<endl;
     vector<string> domains = csp->getDomainValues(var);
     for (int i = 0; i < domains.size(); i++) {
+        cout << "domains: "<<domains[i]<<endl;
         if (csp->consistency(var, domains[i], assignment)) {
-            cout << var<<" and "<<domains[i]<<"is consistent"<<endl;
+            cout << var<<" and "<<domains[i]<<" is consistent"<<endl;
             //add this pair
             assignment.insert(make_pair(var, domains[i]));
-            jobMap result = recursiveBackTracking(assignment, csp);
+            Map result = recursiveBackTracking(assignment, csp);
             
-            if (result.size() != 0) {
+            if (!result.empty()) {
                 return result;
             }
             assignment.erase(var);
         }
     }
-    jobMap fail;
+    Map fail;
     return fail;
 }
-
-jobMap backTrackingSearch(ProblemJobs* csp)
+template <class Problem>
+Map backTrackingSearch(Problem* csp)
 {
-    jobMap init;
+    Map init;
     return recursiveBackTracking(init,csp);
 }
 
 int main(int argc, char * argv[])
 {
     ProblemJobs* p1 = new ProblemJobs();
-    jobMap result = backTrackingSearch(p1);
+    ProblemHouse* p2 = new ProblemHouse();
+    Map result = backTrackingSearch(p2);
     cout<<"=========\nPuzzle result:"<<endl;
-    for (auto it: result) {
-        cout << it.first <<" | "<< it.second<<endl;
-
+    if (result.empty()) {
+        cout << "FAIL"<<endl;
+        
+    }else{
+        for (auto it: result) {
+            cout << it.first <<" | "<< it.second<<endl;
+        }
+        
     }
+    
     
     return 0;
 }

@@ -10,13 +10,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CSP/main.cpp"
-            timestampString = "446840907.031182"
+            timestampString = "447129580.006834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "recursiveBackTracking(jobMap assignment, ProblemJobs* csp)"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "recursiveBackTracking(Map assignment, Problem* csp)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CSP/ProblemHouse.cpp"
+            timestampString = "447114749.241469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "ProblemHouse:: consistency(string var, string value, Map assignment)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

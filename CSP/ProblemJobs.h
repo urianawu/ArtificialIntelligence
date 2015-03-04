@@ -17,16 +17,16 @@
 #include <vector>
 
 using namespace std;
-typedef multimap<string, string> jobMap;
+typedef multimap<string, string> Map;
 
 class ProblemJobs{
 public:
     ProblemJobs();
     vector<string> getVariables();
     vector<string> getDomainValues(string var);
-    bool consistency(string var, string value, jobMap assignment);
+    bool consistency(string var, string value, Map assignment);
     
-private:
+protected:
     vector<string> variables;
     vector<string> domainValues;
 
