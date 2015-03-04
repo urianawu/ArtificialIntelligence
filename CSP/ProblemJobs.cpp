@@ -65,10 +65,17 @@ bool ProblemJobs::consistency(string var, string value, Map assignment)
         return false;
     }
     // chef is not police officer
-    if (var == "police officer" && value == assignment.find("chef")->second) {
-        return false;
+    if (assignment.find("chef") != assignment.end()) {
+        if (var == "police officer" && value == assignment.find("chef")->second) {
+            return false;
+        }
     }
-
+    if (assignment.find("police officer") != assignment.end()) {
+        if (var == "chef" && value == assignment.find("police officer")->second) {
+            return false;
+        }
+    }
+    
     //actor is male
     if (var == "actor" && !isMale) {
         return false;

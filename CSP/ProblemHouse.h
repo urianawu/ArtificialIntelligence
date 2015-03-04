@@ -15,6 +15,7 @@ class ProblemHouse : public ProblemJobs{
 public:
     ProblemHouse();
     bool consistency(string var, string value, Map assignment);
-
+private:
+    bool inSameHouse(string property1, string property2, string var, string value, Map assignment);
 };
 #endif /* defined(__CSP__ProblemHouse__) */
