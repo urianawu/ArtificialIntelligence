@@ -2,6 +2,8 @@
 
 AI assignments here.
 
+Check **Releases** to see all projects!
+
 GitHub link:  https://github.com/urianawu/ArtificialIntelligence/
 
 Implemented under Xcode 6.1.1.
