@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C6678F591A9F926C00EFA93B /* ProblemJobs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE659C1A8E6E46003EC72A /* ProblemJobs.cpp */; };
-		C6AAB49B1AA2443A00214B73 /* ProblemHouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AAB4991AA2443A00214B73 /* ProblemHouse.cpp */; };
+		C6AAB49E1AA8051400214B73 /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6AAB49C1AA8051400214B73 /* Board.cpp */; };
 		C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE65981A8E6E46003EC72A /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +24,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C6AAB4991AA2443A00214B73 /* ProblemHouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProblemHouse.cpp; sourceTree = "<group>"; };
-		C6AAB49A1AA2443A00214B73 /* ProblemHouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemHouse.h; sourceTree = "<group>"; };
-		C6DE658E1A8E6DC3003EC72A /* CSP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CSP; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6AAB49C1AA8051400214B73 /* Board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
+		C6AAB49D1AA8051400214B73 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		C6DE658E1A8E6DC3003EC72A /* Othello */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Othello; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE65981A8E6E46003EC72A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6DE65991A8E6E46003EC72A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
-		C6DE659C1A8E6E46003EC72A /* ProblemJobs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProblemJobs.cpp; sourceTree = "<group>"; };
-		C6DE659D1A8E6E46003EC72A /* ProblemJobs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemJobs.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +45,7 @@
 		C6DE65851A8E6DC3003EC72A = {
 			isa = PBXGroup;
 			children = (
-				C6DE65901A8E6DC3003EC72A /* CSP */,
+				C6DE65901A8E6DC3003EC72A /* Othello */,
 				C6DE658F1A8E6DC3003EC72A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,30 +53,28 @@
 		C6DE658F1A8E6DC3003EC72A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6DE658E1A8E6DC3003EC72A /* CSP */,
+				C6DE658E1A8E6DC3003EC72A /* Othello */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6DE65901A8E6DC3003EC72A /* CSP */ = {
+		C6DE65901A8E6DC3003EC72A /* Othello */ = {
 			isa = PBXGroup;
 			children = (
 				C6DE65981A8E6E46003EC72A /* main.cpp */,
 				C6DE65991A8E6E46003EC72A /* makefile */,
-				C6DE659C1A8E6E46003EC72A /* ProblemJobs.cpp */,
-				C6DE659D1A8E6E46003EC72A /* ProblemJobs.h */,
-				C6AAB4991AA2443A00214B73 /* ProblemHouse.cpp */,
-				C6AAB49A1AA2443A00214B73 /* ProblemHouse.h */,
+				C6AAB49C1AA8051400214B73 /* Board.cpp */,
+				C6AAB49D1AA8051400214B73 /* Board.h */,
 			);
-			path = CSP;
+			path = Othello;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C6DE658D1A8E6DC3003EC72A /* CSP */ = {
+		C6DE658D1A8E6DC3003EC72A /* Othello */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "CSP" */;
+			buildConfigurationList = C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "Othello" */;
 			buildPhases = (
 				C6DE658A1A8E6DC3003EC72A /* Sources */,
 				C6DE658B1A8E6DC3003EC72A /* Frameworks */,
@@ -89,9 +84,9 @@
 			);
 			dependencies = (
 			);
-			name = CSP;
+			name = Othello;
 			productName = AS;
-			productReference = C6DE658E1A8E6DC3003EC72A /* CSP */;
+			productReference = C6DE658E1A8E6DC3003EC72A /* Othello */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +103,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "CSP" */;
+			buildConfigurationList = C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "Othello" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -120,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6DE658D1A8E6DC3003EC72A /* CSP */,
+				C6DE658D1A8E6DC3003EC72A /* Othello */,
 			);
 		};
 /* End PBXProject section */
@@ -130,9 +125,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6678F591A9F926C00EFA93B /* ProblemJobs.cpp in Sources */,
+				C6AAB49E1AA8051400214B73 /* Board.cpp in Sources */,
 				C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */,
-				C6AAB49B1AA2443A00214B73 /* ProblemHouse.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,21 +210,21 @@
 		C6DE65961A8E6DC3003EC72A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = CSP;
+				PRODUCT_NAME = Othello;
 			};
 			name = Debug;
 		};
 		C6DE65971A8E6DC3003EC72A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = CSP;
+				PRODUCT_NAME = Othello;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "CSP" */ = {
+		C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "Othello" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6DE65931A8E6DC3003EC72A /* Debug */,
@@ -239,7 +233,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "CSP" */ = {
+		C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "Othello" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6DE65961A8E6DC3003EC72A /* Debug */,
