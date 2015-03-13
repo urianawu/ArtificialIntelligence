@@ -14,7 +14,7 @@
 #include <limits>
 
 #include "Board.h"
-#define INF 999999999
+#define INF 1000
 
 using namespace std;
 int minValue(Board board, char p, int alpha, int beta, int depth, int limit);
@@ -110,9 +110,16 @@ int minValue(Board board, char p, int alpha, int beta, int depth, int limit)
 
 int main(int argc, char * argv[])
 {
+    if(argc != 4)
+    {
+        printf("# Wrong format.");
+        exit(0);
+    }
+    
     int size = atoi(argv[1]);
     char player = argv[2][0];
     int depth = atoi(argv[3]);
+
     cout<<"# Othello "<<size<<" "<<player<<" "<<depth<<endl;
     
     srand (time(NULL));
@@ -187,6 +194,7 @@ int main(int argc, char * argv[])
             case 'r':
                 //remove all stones
                 board.resetState();
+                board.printState();
                 break;
             case 'q':
                 //quit program

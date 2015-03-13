@@ -2,8 +2,8 @@
 
 CC		= g++
 LDFLAGS 	= -lm -std=c++11
-PROJECT		= main
-FILES		= main.cpp ProblemHouse.cpp ProblemJobs.cpp
+PROJECT		= othello
+FILES		= main.cpp Board.cpp
 
 ${PROJECT}:${FILES}
 	${CC} ${CFLAGS} -o ${PROJECT} ${FILES} ${LDFLAGS}
