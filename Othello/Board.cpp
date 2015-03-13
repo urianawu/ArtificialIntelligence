@@ -69,16 +69,38 @@ int Board::computeScore()
 vector<Move> Board::legalMoves(char P)
 {
     vector<Move> moves;
-    Move m;
-    m.x = 1;
-    m.y = 2;
-    moves.push_back(m);
+    char Opponent;
+    if (P == 'W') {
+        Opponent = 'B';
+    }else {
+        Opponent = 'W';
+    }
+
+    for (int x = 0; x < N; x++) {
+        for (int y = 0; y < N; y++) {
+            if (isAdjacent(x, y, Opponent)) {
+                Board testMove = makeMove(P, x, y);
+                int testScore = testMove.computeScore();
+            
+                if (abs(testScore - computeScore()) > 1) {
+                    Move legal;
+                    legal.x = x;
+                    legal.y = y;
+                    moves.push_back(legal);
+                }
+            }
+        }
+    }
     return moves;
 }
 
 Board Board::makeMove(char P, int x, int y)
 {
-    char * temp = state;
+    char * temp = new char[N*N];
+    for (int i = 0; i < N*N; i++) {
+        temp[i] = state[i];
+
+    }
     temp[x*N+y] = P;
     
     char Opponent;
@@ -92,9 +114,7 @@ Board Board::makeMove(char P, int x, int y)
         for (int j=0 ; j<N ; j++) {
             if (i == x && temp[i*N+j] == P && j != y) {
                     bool allOpponent = true;
-                cout<<"horizontal"<<i<<", "<<j<<endl;
                     for (int deltaY = j<y? j+1:j-1; j<y ? deltaY < y: deltaY > y; j<y ?deltaY++: deltaY--) {
-                        cout << deltaY<<" | ";
                         if (temp[i*N+deltaY] != Opponent) {
                             allOpponent = false;
                         }
@@ -107,7 +127,6 @@ Board Board::makeMove(char P, int x, int y)
                 
             }
             if (j == y && temp[i*N+j] == P && i != x) {
-                cout<<"vertical"<<i<<", "<<j<<endl;
 
                 bool allOpponent = true;
                 for (int deltaX = i<x?i+1:i-1; i<x ? deltaX < x: deltaX > x; i<x ?deltaX++: deltaX--) {
@@ -122,26 +141,58 @@ Board Board::makeMove(char P, int x, int y)
                 }
 
             }
-            if (i-x == j-y && temp[i*N+j] == P && i != x) {
-                cout<<"diagonal"<<i<<", "<<j<<endl;
+            if (abs(i-x) == abs(j-y) && temp[i*N+j] == P && i != x) {
 
                 bool allOpponent = true;
-                for (int delta = i<x?i+1:i-1; i<x ? delta < x: delta > x; i<x ?delta++: delta--) {
-                    if (temp[delta*N+delta] != Opponent) {
+                for (int deltaX = i<x?i+1:i-1; i<x ? deltaX < x: deltaX > x; i<x ?deltaX++: deltaX--) {
+                    int deltaY = 0;
+                    if (i-x == j-y) {
+                        deltaY = deltaX+(y-x);
+                    }else {
+                        deltaY = (x+y) - deltaX;
+                    }
+                    if (temp[deltaX*N+deltaY] != Opponent) {
                         allOpponent = false;
                     }
                 }
                 if (allOpponent) {
-                    for (int delta = i<x?i+1:i-1; i<x ? delta < x: delta > x; i<x ?delta++: delta--) {
-                        temp[delta*N+delta] = P;
+                    for (int deltaX = i<x?i+1:i-1; i<x ? deltaX < x: deltaX > x; i<x ?deltaX++: deltaX--) {
+                        int deltaY = 0;
+                        if (i-x == j-y) {
+                            deltaY = deltaX+(y-x);
+                        }else {
+                            deltaY = (x+y) - deltaX;
+                        }
+                        temp[deltaX*N+deltaY] = P;
                     }
                 }
                 
             }
         }
     }
-    Board newBoard = *this;
-    newBoard.state = state;
+    Board newBoard(N, Player);
+    newBoard.state = temp;
     return newBoard;
+
+}
+
+bool Board::isAdjacent(int x, int y, char p)
+{
+    bool adjacent = false;
+    if (state[x*N + y] != '.') {
+        return adjacent;
+    }
+    
+    for (int deltaY = -1; deltaY <= 1; deltaY++) {
+        for (int deltaX = -1; deltaX <= 1; deltaX++) {
+            if (x+deltaX >= 0 && x+deltaX < N && y+deltaY >= 0 && y+deltaY < N) {
+                if (state[(x+deltaX)*N + (y+deltaY)] == p) {
+                    adjacent = true;
+                }
+            }
+        }
+    }
+    return adjacent;
+    
 
 }

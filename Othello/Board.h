@@ -44,5 +44,7 @@ public:
     
     vector<Move> legalMoves(char P);
     Board makeMove(char P1, int x, int y);
+private:
+    bool isAdjacent(int x, int y, char p);
 };
 #endif /* defined(__Othello__Board__) */
