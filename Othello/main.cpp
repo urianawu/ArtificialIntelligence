@@ -66,7 +66,7 @@ int maxValue(Board board, char p, int alpha, int beta, int depth, int limit)
     depth++;
 
     if (board.legalMoves(p).empty() || depth > limit) {
-        return board.computeScore();
+        return board.utility();
     }
 
     int value = - INF;
@@ -92,7 +92,7 @@ int minValue(Board board, char p, int alpha, int beta, int depth, int limit)
     depth++;
 
     if (board.legalMoves(p).empty() || depth > limit) {
-        return board.computeScore();
+        return board.utility();
     }
 
     int value = INF;
@@ -114,6 +114,9 @@ int main(int argc, char * argv[])
     char player = argv[2][0];
     int depth = atoi(argv[3]);
     cout<<"# Othello "<<size<<" "<<player<<" "<<depth<<endl;
+    
+    srand (time(NULL));
+
     Board board(size, player);
 
     while (true) {

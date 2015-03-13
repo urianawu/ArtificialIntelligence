@@ -32,9 +32,12 @@ public:
     char* state;
     int N;
     char Player;
+    Board* parent;
+    int NumOfEdge, NumOfCorner;
     
     Board(int N, char Player);
     
+    void setState(char * state);
     void initState();
     char* getState();
     void printState();
