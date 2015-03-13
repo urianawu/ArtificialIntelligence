@@ -41,7 +41,8 @@ public:
     void resetState();
     
     int computeScore();
-    
+    int utility();
+
     vector<Move> legalMoves(char P);
     Board makeMove(char P1, int x, int y);
 private:

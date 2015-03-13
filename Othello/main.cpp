@@ -14,10 +14,11 @@
 #include <limits>
 
 #include "Board.h"
+#define INF 999999999
 
 using namespace std;
-int minValue(Board board, char p, int depth, int limit);
-int maxValue(Board board, char p, int depth, int limit);
+int minValue(Board board, char p, int alpha, int beta, int depth, int limit);
+int maxValue(Board board, char p, int alpha, int beta, int depth, int limit);
 
 Move minimaxMove(Board board, char p, int limit)
 {
@@ -35,9 +36,9 @@ Move minimaxMove(Board board, char p, int limit)
     for (auto it: legalMoves) {
         int value;
         if (p == board.Player) {
-            value = minValue(board.makeMove(p, it.x, it.y), Opponent, 0, limit);
+            value = minValue(board.makeMove(p, it.x, it.y), Opponent, -INF, INF, 0, limit);
         }else {
-            value = maxValue(board.makeMove(p, it.x, it.y), Opponent, 0, limit);
+            value = maxValue(board.makeMove(p, it.x, it.y), Opponent, -INF, INF, 0, limit);
         }
         values.push_back(value);
         cout<<"# considering: ("<<it.x<<", "<<it.y<<"), mm="<<value<<endl;
@@ -54,7 +55,7 @@ Move minimaxMove(Board board, char p, int limit)
     return bestMove;
 }
 
-int maxValue(Board board, char p, int depth, int limit)
+int maxValue(Board board, char p, int alpha, int beta, int depth, int limit)
 {
     char Opponent;
     if (p == 'W') {
@@ -68,15 +69,19 @@ int maxValue(Board board, char p, int depth, int limit)
         return board.computeScore();
     }
 
-    int value = - 999999999;
+    int value = - INF;
     vector<Move> legalMoves = board.legalMoves(p);
     for (auto it: legalMoves) {
-        value = max(value, minValue(board.makeMove(p, it.x, it.y), Opponent, depth, limit));
+        value = max(value, minValue(board.makeMove(p, it.x, it.y), Opponent, alpha, beta, depth, limit));
+        if (value >= beta) {
+            return value;
+        }
+        alpha = max(alpha, value);
     }
     return value;
 }
 
-int minValue(Board board, char p, int depth, int limit)
+int minValue(Board board, char p, int alpha, int beta, int depth, int limit)
 {
     char Opponent;
     if (p == 'W') {
@@ -90,11 +95,15 @@ int minValue(Board board, char p, int depth, int limit)
         return board.computeScore();
     }
 
-    int value = 99999999;
+    int value = INF;
     
     vector<Move> legalMoves = board.legalMoves(p);
     for (auto it: legalMoves) {
-        value = min(value, maxValue(board.makeMove(p, it.x, it.y), Opponent, depth, limit));
+        value = min(value, maxValue(board.makeMove(p, it.x, it.y), Opponent, alpha, beta, depth, limit));
+        if (value <= alpha) {
+            return value;
+        }
+        beta = min(beta, value);
     }
     return value;
 }
@@ -108,9 +117,21 @@ int main(int argc, char * argv[])
     Board board(size, player);
 
     while (true) {
+        bool gg = true;
+        for (int i = 0; i < size*size; i++) {
+            if (board.state[i] == '.')
+                gg = false;
+        }
+        if (gg) {
+            cout<<"game over"<<endl;
+            exit(0);
+        }
+        
         //detect user input
         char input[100];
         cin.getline(input,sizeof(input));
+        
+
         switch (input[0]) {
             case 'i':
                 //init operation
@@ -148,11 +169,15 @@ int main(int argc, char * argv[])
                 substr = strtok (input," ");
                 substr = strtok (NULL, " ");
                 char P = substr[0];
+                if (board.legalMoves(P).empty()) {
+                    cout<<"forfeit"<<endl;
+                }else {
                 Move m = minimaxMove(board, P, depth);
                 cout<<"("<<m.x<<","<<m.y<<")"<<endl;
                 board = board.makeMove(P, m.x, m.y);
                 cout<<"# score = "<<board.computeScore()<<endl;
                 board.printState();
+                }
 
                 break;
             }

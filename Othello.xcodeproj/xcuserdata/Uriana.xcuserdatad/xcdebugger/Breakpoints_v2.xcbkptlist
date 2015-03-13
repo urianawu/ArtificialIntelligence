@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Othello/main.cpp"
-            timestampString = "447915775.74173"
+            timestampString = "447917606.881075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "main(int argc, char * argv[])"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Othello/main.cpp"
-            timestampString = "447915455.103725"
+            timestampString = "447917606.881075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "minimaxMove(Board board, char p, int limit)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Othello/main.cpp"
-            timestampString = "447915775.74173"
+            timestampString = "447917606.881075"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "minValue(Board board, char p, int depth, int limit)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "minValue(Board board, char p, int alpha, int beta, int depth, int limit)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -45,6 +45,7 @@ void Board::resetState()
         state[i] = '.';
     }
 }
+
 int Board::computeScore()
 {
     int countOfB = 0;
@@ -64,6 +65,15 @@ int Board::computeScore()
     }
     
     return 0;
+}
+
+int Board::utility()
+{
+    int util;
+    if (Player == 'B') {
+    }else if (Player == 'W') {
+    }
+
 }
 
 vector<Move> Board::legalMoves(char P)
