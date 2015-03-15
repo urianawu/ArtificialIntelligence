@@ -13,6 +13,7 @@
 #include <algorithm>
 #include <limits>
 
+
 #include "Board.h"
 #define INF 1000
 
@@ -112,7 +113,7 @@ int main(int argc, char * argv[])
 {
     if(argc != 4)
     {
-        printf("# Wrong format.");
+        cout<<"# Wrong format.";
         exit(0);
     }
     
