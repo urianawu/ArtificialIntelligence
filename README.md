@@ -14,7 +14,7 @@ Open .xcodeproj using Xcode -> Run
 
 To change to correct working directory:
 
-Product -> Scheme -> Edit Scheme -> Working Directory -> check "use custom working directory" -> type in $PROJECT_DIR
+Product -> Scheme -> Edit Scheme -> Working Directory -> check "use custom working directory" -> type in $PROJECT_DIR/$PROJECT_NAME
 
 NOTE: store all "ready to pass in" files in the same path with main.cpp file.
 
