@@ -24,7 +24,7 @@ struct Comparator
     {
         int min1 = min((int)lhs.i->getSymbols().size(), (int)lhs.j->getSymbols().size());
         int min2 = min((int)rhs.i->getSymbols().size(), (int)rhs.j->getSymbols().size());
-        if ( min1 >= min2) {
+        if ( min1 > min2) {
             return true;
         } else {
             return false;
