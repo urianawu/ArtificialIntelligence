@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropLogicProver/Clause.cpp"
-            timestampString = "448521105.445663"
+            timestampString = "448776245.204389"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "Clause::resolvable(Clause cls)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "Clause::resolvable(Clause* cls)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +106,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropLogicProver/main.cpp"
-            timestampString = "448522619.449165"
+            timestampString = "448777306.000089"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "resolution(vector&lt;Clause&gt; clauses)"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "resolution(vector&lt;Clause*&gt; clauses)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropLogicProver/main.cpp"
-            timestampString = "448522630.484538"
+            timestampString = "448777251.929939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "resolution(vector&lt;Clause&gt; clauses)"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "resolution(vector&lt;Clause*&gt; clauses)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PropLogicProver/main.cpp"
-            timestampString = "448522638.44666"
+            timestampString = "448777251.929939"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "resolution(vector&lt;Clause&gt; clauses)"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "resolution(vector&lt;Clause*&gt; clauses)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PropLogicProver/Clause.cpp"
+            timestampString = "448776245.204389"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "Clause::resolve(Clause* cls, string p)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PropLogicProver/main.cpp"
+            timestampString = "448776797.840077"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "proofTree(Clause* c, int depth)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

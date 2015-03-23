@@ -18,20 +18,51 @@
 
 using namespace std;
 
+
 class Clause{
 public:
+    int index;
+    struct parents {
+        Clause* p1 = NULL;
+        Clause* p2 = NULL;
+    }p;
+
+    //Clause();
     Clause(string);
     vector<string> getSymbols();
     string getString();
+    string toPrint();
     
-    vector<string> resolvable(Clause cls);
-    Clause resolve(Clause cls, string p);
+    vector<string> resolvable(Clause* cls);
+    Clause* resolve(Clause* cls, string p);
 
     bool operator ==(const Clause& c);
+    void operator=(const Clause &c );
 
-    
 private:
     vector<string> symbols;
     string str;
+    
+    static int NumOfClauses;
+    
 };
+class ResPair{
+public:
+    ResPair(Clause* i, Clause* j, string p);
+
+    Clause* i;
+    Clause* j;
+    string p;
+};
+
+
+//class ResPair{
+//public:
+//    ResPair(int i, int j, string p);
+//    
+//    int i;
+//    int j;
+//    string p;
+//};
+
 #endif /* defined(__PropLogicProver__Clause__) */

@@ -22,9 +22,9 @@ using namespace std;
 class ClausesReader{
 public:
     ClausesReader(char* filename);
-    vector<Clause> getClauses();
+    vector<Clause*> getClauses();
 private:
-    vector<Clause> clauses;
+    vector<Clause*> clauses;
 
 };
 #endif /* defined(__PropLogicProver__ClausesReader__) */

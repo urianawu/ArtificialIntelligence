@@ -25,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C64CDE761ABFCDC600AA02EC /* Sammys.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sammys.data; sourceTree = "<group>"; };
 		C6BF41771AB60AF00078C10C /* ClausesReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClausesReader.cpp; sourceTree = "<group>"; };
 		C6BF41781AB60AF00078C10C /* ClausesReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClausesReader.h; sourceTree = "<group>"; };
 		C6BF417A1AB60E860078C10C /* KB.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KB.data; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 				C6BF41771AB60AF00078C10C /* ClausesReader.cpp */,
 				C6BF41781AB60AF00078C10C /* ClausesReader.h */,
 				C6BF417A1AB60E860078C10C /* KB.data */,
+				C64CDE761ABFCDC600AA02EC /* Sammys.data */,
 				C6BF417B1ABBC5D70078C10C /* Clause.cpp */,
 				C6BF417C1ABBC5D70078C10C /* Clause.h */,
 			);

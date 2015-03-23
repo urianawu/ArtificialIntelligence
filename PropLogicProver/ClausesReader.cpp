@@ -11,20 +11,18 @@ ClausesReader::ClausesReader(char* filename)
 {
     ifstream infile(filename);
     string clause;
-    cout<<"initial clauses:"<<endl;
-    int NumOfClauses = 0;
+    //cout<<"initial clauses:"<<endl;
     while (getline(infile, clause)) {
-        Clause cls(clause);
+        Clause* cls = new Clause(clause);
         clauses.push_back(cls);
-        cout<<NumOfClauses<<": ("<<clause<<")"<<endl;
-        NumOfClauses++;
+        //cout<<NumOfClauses<<": ("<<clause<<")"<<endl;
     }
-    cout<<"---------------"<<endl;
+    //cout<<"---------------"<<endl;
     
 
 }
 
-vector<Clause> ClausesReader::getClauses()
+vector<Clause*> ClausesReader::getClauses()
 {
     return clauses;
 }
