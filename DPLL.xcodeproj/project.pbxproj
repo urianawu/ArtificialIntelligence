@@ -25,13 +25,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C64CDE761ABFCDC600AA02EC /* Sammys.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Sammys.data; sourceTree = "<group>"; };
+		C64CDE761ABFCDC600AA02EC /* FFCG.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = FFCG.data; sourceTree = "<group>"; };
 		C6BF41771AB60AF00078C10C /* ClausesReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClausesReader.cpp; sourceTree = "<group>"; };
 		C6BF41781AB60AF00078C10C /* ClausesReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClausesReader.h; sourceTree = "<group>"; };
-		C6BF417A1AB60E860078C10C /* KB.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = KB.data; sourceTree = "<group>"; };
+		C6BF417A1AB60E860078C10C /* example.data */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.data; sourceTree = "<group>"; };
 		C6BF417B1ABBC5D70078C10C /* Clause.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clause.cpp; sourceTree = "<group>"; };
 		C6BF417C1ABBC5D70078C10C /* Clause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clause.h; sourceTree = "<group>"; };
-		C6DE658E1A8E6DC3003EC72A /* PropLogicProver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PropLogicProver; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6DE658E1A8E6DC3003EC72A /* DPLL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DPLL; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE65981A8E6E46003EC72A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6DE65991A8E6E46003EC72A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,7 +50,7 @@
 		C6DE65851A8E6DC3003EC72A = {
 			isa = PBXGroup;
 			children = (
-				C6DE65901A8E6DC3003EC72A /* PropLogicProver */,
+				C6DE65901A8E6DC3003EC72A /* DPLL */,
 				C6DE658F1A8E6DC3003EC72A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,32 +58,32 @@
 		C6DE658F1A8E6DC3003EC72A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C6DE658E1A8E6DC3003EC72A /* PropLogicProver */,
+				C6DE658E1A8E6DC3003EC72A /* DPLL */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C6DE65901A8E6DC3003EC72A /* PropLogicProver */ = {
+		C6DE65901A8E6DC3003EC72A /* DPLL */ = {
 			isa = PBXGroup;
 			children = (
 				C6DE65981A8E6E46003EC72A /* main.cpp */,
 				C6DE65991A8E6E46003EC72A /* makefile */,
 				C6BF41771AB60AF00078C10C /* ClausesReader.cpp */,
 				C6BF41781AB60AF00078C10C /* ClausesReader.h */,
-				C6BF417A1AB60E860078C10C /* KB.data */,
-				C64CDE761ABFCDC600AA02EC /* Sammys.data */,
+				C6BF417A1AB60E860078C10C /* example.data */,
+				C64CDE761ABFCDC600AA02EC /* FFCG.data */,
 				C6BF417B1ABBC5D70078C10C /* Clause.cpp */,
 				C6BF417C1ABBC5D70078C10C /* Clause.h */,
 			);
-			path = PropLogicProver;
+			path = DPLL;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C6DE658D1A8E6DC3003EC72A /* PropLogicProver */ = {
+		C6DE658D1A8E6DC3003EC72A /* DPLL */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "PropLogicProver" */;
+			buildConfigurationList = C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "DPLL" */;
 			buildPhases = (
 				C6DE658A1A8E6DC3003EC72A /* Sources */,
 				C6DE658B1A8E6DC3003EC72A /* Frameworks */,
@@ -93,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = PropLogicProver;
+			name = DPLL;
 			productName = AS;
-			productReference = C6DE658E1A8E6DC3003EC72A /* PropLogicProver */;
+			productReference = C6DE658E1A8E6DC3003EC72A /* DPLL */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -112,7 +112,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "PropLogicProver" */;
+			buildConfigurationList = C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "DPLL" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C6DE658D1A8E6DC3003EC72A /* PropLogicProver */,
+				C6DE658D1A8E6DC3003EC72A /* DPLL */,
 			);
 		};
 /* End PBXProject section */
@@ -220,21 +220,21 @@
 		C6DE65961A8E6DC3003EC72A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = PropLogicProver;
+				PRODUCT_NAME = DPLL;
 			};
 			name = Debug;
 		};
 		C6DE65971A8E6DC3003EC72A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = PropLogicProver;
+				PRODUCT_NAME = DPLL;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "PropLogicProver" */ = {
+		C6DE65891A8E6DC3003EC72A /* Build configuration list for PBXProject "DPLL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6DE65931A8E6DC3003EC72A /* Debug */,
@@ -243,7 +243,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "PropLogicProver" */ = {
+		C6DE65951A8E6DC3003EC72A /* Build configuration list for PBXNativeTarget "DPLL" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C6DE65961A8E6DC3003EC72A /* Debug */,
