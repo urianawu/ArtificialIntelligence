@@ -89,13 +89,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "DPLL/Clause.cpp"
-            timestampString = "448776245.204389"
+            filePath = "DPLL/main.cpp"
+            timestampString = "449443024.381058"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "Clause::resolvable(Clause* cls)"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "checkClauses(vector&lt;Clause*&gt; clauses, mMap model)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DPLL/main.cpp"
+            timestampString = "449443024.381058"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "checkClauses(vector&lt;Clause*&gt; clauses, mMap model)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DPLL/Clause.cpp"
+            timestampString = "449434412.015421"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "Clause::satisfied(mMap model)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -106,12 +138,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DPLL/Clause.cpp"
-            timestampString = "448776245.204389"
+            timestampString = "449439309.132067"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "Clause::resolve(Clause* cls, string p)"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "Clause::satisfied(mMap model)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

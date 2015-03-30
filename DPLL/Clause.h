@@ -13,56 +13,37 @@
 #include <string>
 #include <vector>
 #include <set>
+#include <map>
+#include <unordered_map>
 #include <sstream>
 #include <iostream>
 
 using namespace std;
-
+typedef unordered_map<char, bool> mMap;
 
 class Clause{
 public:
     int index;
-    struct parents {
-        Clause* p1 = NULL;
-        Clause* p2 = NULL;
-    }p;
 
     //Clause();
     Clause(string);
-    vector<string> getSymbols();
+    vector<string> getLiterals();
     string getString();
     string toPrint();
-    
-    vector<string> resolvable(Clause* cls);
-    Clause* resolve(Clause* cls, string p);
 
+    string satisfied(mMap model);
     bool operator ==(const Clause& c);
     void operator=(const Clause &c );
 
 private:
-    vector<string> symbols;
+    vector<string> literals;
     string str;
     
     static int NumOfClauses;
     
 };
-class ResPair{
-public:
-    ResPair(Clause* i, Clause* j, string p);
 
-    Clause* i;
-    Clause* j;
-    string p;
-};
+typedef unordered_map<Clause*, bool> cMap;
 
-
-//class ResPair{
-//public:
-//    ResPair(int i, int j, string p);
-//    
-//    int i;
-//    int j;
-//    string p;
-//};
 
 #endif /* defined(__PropLogicProver__Clause__) */

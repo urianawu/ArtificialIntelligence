@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C6DE658D1A8E6DC3003EC72A"
-               BuildableName = "PropLogicProver"
+               BuildableName = "DPLL"
                BlueprintName = "DPLL"
                ReferencedContainer = "container:DPLL.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C6DE658D1A8E6DC3003EC72A"
-            BuildableName = "PropLogicProver"
+            BuildableName = "DPLL"
             BlueprintName = "DPLL"
             ReferencedContainer = "container:DPLL.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C6DE658D1A8E6DC3003EC72A"
-            BuildableName = "PropLogicProver"
+            BuildableName = "DPLL"
             BlueprintName = "DPLL"
             ReferencedContainer = "container:DPLL.xcodeproj">
          </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C6DE658D1A8E6DC3003EC72A"
-            BuildableName = "PropLogicProver"
+            BuildableName = "DPLL"
             BlueprintName = "DPLL"
             ReferencedContainer = "container:DPLL.xcodeproj">
          </BuildableReference>

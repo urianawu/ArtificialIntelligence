@@ -23,8 +23,10 @@ class ClausesReader{
 public:
     ClausesReader(char* filename);
     vector<Clause*> getClauses();
+    vector<char> getSymbols();
 private:
     vector<Clause*> clauses;
+    vector<char> symbols;
 
 };
 #endif /* defined(__PropLogicProver__ClausesReader__) */

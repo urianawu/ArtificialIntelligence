@@ -26,3 +26,17 @@ vector<Clause*> ClausesReader::getClauses()
 {
     return clauses;
 }
+
+vector<char> ClausesReader::getSymbols()
+{
+    for (auto it:clauses) {
+        vector<string> literals = it->getLiterals();
+        for (int i = 0; i < literals.size(); i++) {
+            if (find(symbols.begin(), symbols.end(), literals[i].back()) == symbols.end()) {
+                symbols.push_back(literals[i].back());
+            }
+        }
+        
+    }
+    return symbols;
+}
