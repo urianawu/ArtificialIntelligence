@@ -11,15 +11,17 @@ ClausesReader::ClausesReader(char* filename)
 {
     ifstream infile(filename);
     string clause;
-    //cout<<"initial clauses:"<<endl;
     while (getline(infile, clause)) {
         Clause* cls = new Clause(clause);
         clauses.push_back(cls);
-        //cout<<NumOfClauses<<": ("<<clause<<")"<<endl;
     }
-    //cout<<"---------------"<<endl;
     
 
+}
+
+ClausesReader::ClausesReader()
+{
+    
 }
 
 vector<Clause*> ClausesReader::getClauses()

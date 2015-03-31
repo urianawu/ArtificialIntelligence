@@ -22,6 +22,8 @@ using namespace std;
 class ClausesReader{
 public:
     ClausesReader(char* filename);
+    ClausesReader();//for FFCG problem
+    
     vector<Clause*> getClauses();
     vector<char> getSymbols();
 private:

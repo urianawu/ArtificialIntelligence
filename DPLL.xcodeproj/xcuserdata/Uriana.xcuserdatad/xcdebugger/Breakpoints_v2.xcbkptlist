@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DPLL/main.cpp"
-            timestampString = "449443024.381058"
+            timestampString = "449468435.437084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "checkClauses(vector&lt;Clause*&gt; clauses, mMap model)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DPLL/main.cpp"
-            timestampString = "449443024.381058"
+            timestampString = "449468435.437084"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
             landmarkName = "checkClauses(vector&lt;Clause*&gt; clauses, mMap model)"
             landmarkType = "7">
          </BreakpointContent>
@@ -145,6 +145,22 @@
             endingLineNumber = "65"
             landmarkName = "Clause::satisfied(mMap model)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DPLL/main.cpp"
+            timestampString = "449468435.437084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "DPLL(vector&lt;Clause*&gt; clauses, vector&lt;char&gt; symbols, mMap model)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
