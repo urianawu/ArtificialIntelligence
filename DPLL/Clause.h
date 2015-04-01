@@ -19,7 +19,7 @@
 #include <iostream>
 
 using namespace std;
-typedef unordered_map<char, bool> mMap;
+typedef unordered_map<string, bool> mMap;
 
 class Clause{
 public:

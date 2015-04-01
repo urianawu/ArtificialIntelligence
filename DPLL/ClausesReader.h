@@ -25,10 +25,10 @@ public:
     ClausesReader();//for FFCG problem
     
     vector<Clause*> getClauses();
-    vector<char> getSymbols();
+    vector<string> getSymbols();
 private:
     vector<Clause*> clauses;
-    vector<char> symbols;
+    vector<string> symbols;
 
 };
 #endif /* defined(__PropLogicProver__ClausesReader__) */

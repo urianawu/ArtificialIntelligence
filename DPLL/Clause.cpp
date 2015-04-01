@@ -51,9 +51,16 @@ string Clause::satisfied(mMap model)
     bool assignedAll = true;
     //cout<<index<<": ";
     for (auto it : literals) {
-        auto jt = model.find(it.back());
+        string lit = it;
+        bool negate = false;
+        if (lit[0] == '-') {
+            lit.erase(0,1);
+            negate = true;
+        }
+
+        auto jt = model.find(lit);
         if ( jt != model.end()) {
-            if ((it.length() == 1 && jt->second) || (it.length() == 2 && !jt->second)) {
+            if ((!negate && jt->second) || (negate && !jt->second)) {
                 //cout<<toPrint()<<" : true"<<endl;
                 return "true";
             }
@@ -65,8 +72,15 @@ string Clause::satisfied(mMap model)
     if (assignedAll) {
         bool satisfy = false;
         for (auto it : literals) {
-            auto jt = model.find(it.back());
-            if ((it.length() == 2 && !jt->second) || (it.length() == 1 && jt->second)) {
+            string lit = it;
+            bool negate = false;
+            if (lit[0] == '-') {
+                lit.erase(0, 1);
+                negate = true;
+            }
+
+            auto jt = model.find(lit);
+            if ((negate && !jt->second) || (!negate && jt->second)) {
                 //cout<<toPrint()<<" : false"<<endl;
                 satisfy = true;
                 
