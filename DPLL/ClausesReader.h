@@ -30,5 +30,7 @@ private:
     vector<Clause*> clauses;
     vector<string> symbols;
 
+    string getLos(int time, string item, bool L);
+    string getAct(int time, string item, bool LR);
 };
 #endif /* defined(__PropLogicProver__ClausesReader__) */

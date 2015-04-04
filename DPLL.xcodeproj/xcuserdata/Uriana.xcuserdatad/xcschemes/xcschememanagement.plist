@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Othello.xcscheme</key>
+		<key>DPLL.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>PropLogicProver.xcscheme</key>
+		<key>Othello.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>

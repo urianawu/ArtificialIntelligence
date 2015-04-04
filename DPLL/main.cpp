@@ -12,7 +12,7 @@
 #include <string>
 #include <algorithm>
 #include <iterator>     // std::next
-
+#include <map>
 
 #include "ClausesReader.h"
 
@@ -21,56 +21,61 @@ int Clause::NumOfClauses = 0;
 vector<string> AllSymbols;
 int NumOfSymbols = 0;
 int NumOfNodes = 0;
+bool UC = true, PS = true;
 
-//struct Comparator
-//{
-//    bool operator()(const ResPair& lhs, const ResPair& rhs)
-//    {
-//        int min1 = min((int)lhs.i->getSymbols().size(), (int)lhs.j->getSymbols().size());
-//        int min2 = min((int)rhs.i->getSymbols().size(), (int)rhs.j->getSymbols().size());
-//        if ( min1 > min2) {
-//            return true;
-//        } else {
-//            return false;
-//        }
-//        
-//    }
-//};
-
-pair<string,bool> findPureSymbol(vector<Clause*> clauses, cMap clauseMap)
+pair<string,bool> findPureSymbol(vector<Clause*> clauses, vector<string> symbols, cMap clauseMap)
 {
     pair<string, bool> pureSym (" ", NULL);
     vector<string> allLiterals;
+
     for (int c = 0; c < clauses.size(); c++) {
         auto it = clauseMap.find(clauses[c]);
         if ( it == clauseMap.end()) {
             //all remaining clauses
-            //cout<<clauses[c]->index<<": "<<clauses[c]->toPrint()<<endl;
+            //cout<<"remaining:  "<<clauses[c]->toPrint()<<endl;
             vector<string> thisLiterals = clauses[c]->getLiterals();
+            
             for (auto it : thisLiterals) {
-                if (find(allLiterals.begin(), allLiterals.end(), it) == allLiterals.end()) {
-                    allLiterals.push_back(it);
+                if (it[0] == '-') {
+                    string lit = it;
+                    lit.erase(0,1);
+                    if (find(allLiterals.begin(), allLiterals.end(), it) == allLiterals.end()
+                        && (find(symbols.begin(), symbols.end(), lit) != symbols.end())) {
+                        
+                        allLiterals.push_back(it);
+                    }
+                }else {
+                    if (find(allLiterals.begin(), allLiterals.end(), it) == allLiterals.end()
+                        && (find(symbols.begin(), symbols.end(), it) != symbols.end())) {
+                        
+                        allLiterals.push_back(it);
+                    }
                 }
             }
         }
     }
-    
+    cout<<allLiterals.size()<<endl;
     for (auto it : allLiterals) {
+        //cout<<it<<endl;
+
         string lit = it;
         bool negate = false;
         if (lit[0] == '-') {
             lit.erase(0, 1);
+            //cout<<lit<<endl;
             negate = true;
         }
 
         if (!negate) {
             if (find(allLiterals.begin(), allLiterals.end(), "-"+it) == allLiterals.end()) {
+                cout<<"true pure symbol?: "<<it<<endl;
                 pureSym = {it, true};
                 return pureSym;
             }
         }else {
             
             if (find(allLiterals.begin(), allLiterals.end(), lit) == allLiterals.end()) {
+                cout<<"false pure symbol?: "<<it<<endl;
                 pureSym = {lit, false};
                 return pureSym;
             }
@@ -173,9 +178,13 @@ cMap checkClauses(vector<Clause*> clauses, mMap model)
 bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
 {
     NumOfNodes++;
-    cout<< "model= ";
-    printModel(model);
     
+    //cout<< "model= ";
+    //printModel(model);
+    if (NumOfNodes > 1000) {
+        cout<<"failed...";
+        return false;
+    }
     //if every clause in clauses is true in model then return true
     //if some clause in clauses is false in model then return false
     
@@ -198,10 +207,14 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
     if (allAssigned && model.size() == NumOfSymbols) {
         cout<<"--------\nNodes Searched: "<<NumOfNodes<<"\nsolution:"<<endl;
         printModel(model);
-        cout<<"true props:"<<endl;
-        for (auto it: model) {
+        cout<<"\ntrue props:"<<endl;
+        map<string, bool> sortedModel;
+        for (auto it : model) {
+            sortedModel.emplace(it.first, it.second);
+        }
+        for (auto it: sortedModel) {
             if (it.second == true) {
-                cout<<it.first<<" ";
+                cout<<it.first<<endl;
             }
         }
         cout<<endl;
@@ -210,8 +223,10 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
     }
     
     //P, value ← FIND-PURE-SYMBOL(symbols, clauses, model)
-    pair<string,bool> pureSym = findPureSymbol(clauses, clauseMap);
-    
+    if (PS) {
+        
+    pair<string,bool> pureSym = findPureSymbol(clauses, symbols, clauseMap);
+        //cout<<"------pure symbol: "<<pureSym.first<<" : "<<pureSym.second<<endl;
     //if P is non-null then return DPLL(clauses, symbols – P, model ∪ {P=value})
     if (pureSym.first != " ") {
         cout<<"Pure Symbol on "<<pureSym.first<<"=";
@@ -222,13 +237,27 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
         }
 
         vector<string> rest = symbols;
-        rest.erase(find(rest.begin(), rest.end(), pureSym.first));
+
+        for (int i=0; i<rest.size(); i++) {
+            //cout<<rest.at(i)<<" "<<sym<<endl;
+            if (rest.at(i).compare(pureSym.first) == 0) {
+                cout<<"erased "<<i<<" "<<rest.at(i)<<endl;
+                rest.erase(rest.begin()+i);
+            }
+        }
+
         AllSymbols.push_back(pureSym.first);
+        for (auto syms: AllSymbols) {
+            //cout<<"all symbols: "<<syms<<endl;
+        }
         mMap model_P = model;
         model_P.emplace(pureSym);
         
         return DPLL(clauses, rest, model_P);
     }
+    }
+    if (UC) {
+        
     
     //P, value ← FIND-UNIT-CLAUSE(clauses, model)
     pair<string, bool> unitClause = findUnitClause(clauses, model, clauseMap);
@@ -236,18 +265,24 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
     //if P is non-null then return DPLL(clauses, symbols – P, model ∪ {P=value})
     if (unitClause.first != " ") {
         vector<string> rest = symbols;
-        rest.erase(find(rest.begin(), rest.end(), unitClause.first));
+        for (int i=0; i<rest.size(); i++) {
+            //cout<<rest.at(i)<<" "<<unitClause.first<<endl;
+            if (rest.at(i).compare(unitClause.first) == 0) {
+                rest.erase(rest.begin()+i);
+            }
+        }
         AllSymbols.push_back(unitClause.first);
         mMap model_P = model;
         model_P.emplace(unitClause);
         return DPLL(clauses, rest, model_P);
     }
-    
+    }
     //P ← FIRST(symbols); rest ← REST(symbols)
     string P = symbols.front();
     vector<string> rest = symbols;
     rest.erase(rest.begin());
     AllSymbols.push_back(P);
+    
     
     bool satisfiability = false;
     mMap model_Ptrue = model;
@@ -275,7 +310,7 @@ int main(int argc, char * argv[])
         cout<<it<<" ";
     }
     
-    cout<<"\ninitial clauses:"<<endl;
+    cout<<"\n\ninitial clauses:"<<endl;
     for (auto it: kb->getClauses()) {
         cout<<it->index<<": "<<it->toPrint();
         cout<<endl;
@@ -283,8 +318,12 @@ int main(int argc, char * argv[])
     cout<<"---------------"<<endl;
 
     NumOfSymbols = (int)kb->getSymbols().size();
-    
+    cout<<"symbol size:"<<NumOfSymbols<<endl;
     mMap init;
+    PS = true;
+    UC = true;
     DPLL(kb->getClauses(), kb->getSymbols(), init);
+    
+    cout<<"all symbols: "<<AllSymbols.size();
     return 0;
 }

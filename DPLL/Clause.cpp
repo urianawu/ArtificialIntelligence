@@ -20,6 +20,24 @@ Clause::Clause(string str)
     NumOfClauses++;
     
 }
+Clause::Clause(vector<string> symbols)
+{
+
+    literals = symbols;
+    string tmp;
+    for (auto it: symbols) {
+        tmp += it;
+        if (it != symbols.back()) {
+            tmp += " ";
+        }
+    }
+    str = tmp;
+    index = NumOfClauses;
+    NumOfClauses++;
+    
+}
+
+
 
 vector<string> Clause::getLiterals()
 {

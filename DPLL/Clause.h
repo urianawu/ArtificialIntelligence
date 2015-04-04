@@ -27,6 +27,7 @@ public:
 
     //Clause();
     Clause(string);
+    Clause(vector<string> symbols);
     vector<string> getLiterals();
     string getString();
     string toPrint();
