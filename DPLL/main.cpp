@@ -23,7 +23,7 @@ int NumOfSymbols = 0;
 int NumOfNodes = 0;
 bool UC = true, PS = true;
 
-pair<string,bool> findPureSymbol(vector<Clause*> clauses, vector<string> symbols, cMap clauseMap)
+pair<string,bool> findPureSymbol(vector<Clause*> clauses, mMap model, cMap clauseMap)
 {
     pair<string, bool> pureSym (" ", NULL);
     vector<string> allLiterals;
@@ -36,25 +36,19 @@ pair<string,bool> findPureSymbol(vector<Clause*> clauses, vector<string> symbols
             vector<string> thisLiterals = clauses[c]->getLiterals();
             
             for (auto it : thisLiterals) {
+                string lit = it;
                 if (it[0] == '-') {
-                    string lit = it;
                     lit.erase(0,1);
-                    if (find(allLiterals.begin(), allLiterals.end(), it) == allLiterals.end()
-                        && (find(symbols.begin(), symbols.end(), lit) != symbols.end())) {
-                        
-                        allLiterals.push_back(it);
-                    }
-                }else {
-                    if (find(allLiterals.begin(), allLiterals.end(), it) == allLiterals.end()
-                        && (find(symbols.begin(), symbols.end(), it) != symbols.end())) {
-                        
-                        allLiterals.push_back(it);
-                    }
                 }
+                    if (find(allLiterals.begin(), allLiterals.end(), it) == allLiterals.end()
+                        && (model.find(lit) == model.end())) {
+                        
+                        allLiterals.push_back(it);
+                    }
+                
             }
         }
     }
-    cout<<allLiterals.size()<<endl;
     for (auto it : allLiterals) {
         //cout<<it<<endl;
 
@@ -96,14 +90,18 @@ pair<string, bool> findUnitClause(vector<Clause*> clauses, mMap model, cMap clau
             string implied;
 
             for (auto it :  lits) {
-                bool negate = false;
                 string lit = it;
+                bool negate = false;
                 if (lit[0] == '-') {
                     lit.erase(0, 1);
                     negate = true;
                 }
                 if (model.find(lit) != model.end()) {
-                    assigned++;
+                    if (!negate && !model.find(lit)->second) {
+                        assigned++;
+                    } else if (negate && model.find(lit)->second) {
+                        assigned++;
+                    }
                 }else {
                     implied = it;
                 }
@@ -179,11 +177,11 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
 {
     NumOfNodes++;
     
-    //cout<< "model= ";
-    //printModel(model);
+    cout<< "model= ";
+    printModel(model);
     if (NumOfNodes > 1000) {
         cout<<"failed...";
-        return false;
+        exit(0);
     }
     //if every clause in clauses is true in model then return true
     //if some clause in clauses is false in model then return false
@@ -225,7 +223,7 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
     //P, value ← FIND-PURE-SYMBOL(symbols, clauses, model)
     if (PS) {
         
-    pair<string,bool> pureSym = findPureSymbol(clauses, symbols, clauseMap);
+    pair<string,bool> pureSym = findPureSymbol(clauses, model, clauseMap);
         //cout<<"------pure symbol: "<<pureSym.first<<" : "<<pureSym.second<<endl;
     //if P is non-null then return DPLL(clauses, symbols – P, model ∪ {P=value})
     if (pureSym.first != " ") {
@@ -241,12 +239,12 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
         for (int i=0; i<rest.size(); i++) {
             //cout<<rest.at(i)<<" "<<sym<<endl;
             if (rest.at(i).compare(pureSym.first) == 0) {
-                cout<<"erased "<<i<<" "<<rest.at(i)<<endl;
+                //cout<<"erased "<<i<<" "<<rest.at(i)<<endl;
                 rest.erase(rest.begin()+i);
             }
         }
-
-        AllSymbols.push_back(pureSym.first);
+        if (AllSymbols.size() < NumOfSymbols)
+            AllSymbols.push_back(pureSym.first);
         for (auto syms: AllSymbols) {
             //cout<<"all symbols: "<<syms<<endl;
         }
@@ -268,10 +266,13 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
         for (int i=0; i<rest.size(); i++) {
             //cout<<rest.at(i)<<" "<<unitClause.first<<endl;
             if (rest.at(i).compare(unitClause.first) == 0) {
+                //cout<<"erased "<<i<<" "<<rest.at(i)<<endl;
                 rest.erase(rest.begin()+i);
+
             }
         }
-        AllSymbols.push_back(unitClause.first);
+        if (AllSymbols.size() < NumOfSymbols)
+            AllSymbols.push_back(unitClause.first);
         mMap model_P = model;
         model_P.emplace(unitClause);
         return DPLL(clauses, rest, model_P);
@@ -281,7 +282,9 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
     string P = symbols.front();
     vector<string> rest = symbols;
     rest.erase(rest.begin());
-    AllSymbols.push_back(P);
+    
+    if (AllSymbols.size() < NumOfSymbols)
+        AllSymbols.push_back(P);
     
     
     bool satisfiability = false;
@@ -302,8 +305,8 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
 
 int main(int argc, char * argv[])
 {
-    //ClausesReader* kb = new ClausesReader("example.data");
-    ClausesReader* kb = new ClausesReader();
+    ClausesReader* kb = new ClausesReader("example.data");
+    //ClausesReader* kb = new ClausesReader();
     //init log
     cout<<"props:"<<endl;
     for (auto it : kb->getSymbols()) {
@@ -324,6 +327,6 @@ int main(int argc, char * argv[])
     UC = true;
     DPLL(kb->getClauses(), kb->getSymbols(), init);
     
-    cout<<"all symbols: "<<AllSymbols.size();
+    //cout<<"all symbols: "<<AllSymbols.size();
     return 0;
 }

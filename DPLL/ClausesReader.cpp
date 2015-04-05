@@ -49,11 +49,11 @@ ClausesReader::ClausesReader()
     for (int t = 0; t <= TIME_STEP; t++) {
             for (bool b : { false, true }) {
                 vector<vector<string> > syms;
-                //syms.push_back( {getLos(t, "Fx", !b), getLos(t, "Fa", b), getLos(t, "Ch", !b)} );
-                //syms.push_back( {getLos(t, "Ch", !b), getLos(t, "Fa", b), getLos(t, "Gr", !b)} );
-                
-                //syms.push_back( {getLos(t, "Fa", b), getLos(t, "Ch", b), getLos(t, "Gr", b)} );
-                //syms.push_back( {getLos(t, "Fa", b), "-"+getLos(t, "Ch", !b), "-"+getLos(t, "Gr", !b)} );
+
+                syms.push_back( {"-"+getLos(t, "Fx", b), getLos(t, "Fa", b), "-"+getLos(t, "Ch", b)} );
+                syms.push_back( {"-"+getLos(t, "Ch", b), getLos(t, "Fa", b), "-"+getLos(t, "Fx", b)} );
+                syms.push_back( {"-"+getLos(t, "Ch", b), getLos(t, "Fa", b), "-"+getLos(t, "Gr", b)} );
+                syms.push_back( {"-"+getLos(t, "Gr", b), getLos(t, "Fa", b), "-"+getLos(t, "Ch", b)} );
                 
                 for (vector<string> sym : syms) {
                     Clause* cls = new Clause(sym);
@@ -82,9 +82,9 @@ ClausesReader::ClausesReader()
     
     for (int t = 0; t < TIME_STEP; t++) {
         for (int i = 0; i < 2*items.size(); i++) {
-            for (int j = 1; j < 2*items.size(); j++) {
-                if (i < j) {
-                    vector<string> syms = {"-"+Acts[TIME_STEP*t+i], "-"+Acts[TIME_STEP*t+j]};
+            for (int j = 0; j < 2*items.size(); j++) {
+                if (i != j) {
+                    vector<string> syms = {"-"+Acts[2*items.size()*t+i], "-"+Acts[2*items.size()*t+j]};
                     Clause* cls = new Clause(syms);
                     clauses.push_back(cls);
                 }
