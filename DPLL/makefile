@@ -2,7 +2,7 @@
 
 CC		= g++
 LDFLAGS 	= -lm -std=c++11
-PROJECT		= PropLogicProver
+PROJECT		= DPLL
 FILES		= main.cpp Clause.cpp ClausesReader.cpp
 
 ${PROJECT}:${FILES}

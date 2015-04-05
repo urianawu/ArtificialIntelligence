@@ -305,8 +305,17 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
 
 int main(int argc, char * argv[])
 {
-    ClausesReader* kb = new ClausesReader("example.data");
-    //ClausesReader* kb = new ClausesReader();
+    ClausesReader* kb;
+    int choice;
+    cout << "1 for example, 2 for Farmer problem: ";
+    cin >> (choice);
+
+    if (choice == 1) {
+        kb = new ClausesReader("example.data");
+    }else {
+        kb = new ClausesReader();
+    }
+    
     //init log
     cout<<"props:"<<endl;
     for (auto it : kb->getSymbols()) {
