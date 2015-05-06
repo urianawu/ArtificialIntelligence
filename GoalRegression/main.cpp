@@ -14,6 +14,7 @@
 #include <iterator>     // std::next
 #include <map>
 
+#include "KbReader.h"
 #include "ClausesReader.h"
 
 using namespace std;
@@ -305,6 +306,10 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
 
 int main(int argc, char * argv[])
 {
+    char* init = argv[1];
+    KbReader initReader(init);
+    
+    /*
     ClausesReader* kb;
     int choice;
     cout << "1 for example, 2 for Farmer problem: ";
@@ -335,6 +340,8 @@ int main(int argc, char * argv[])
     PS = true;
     UC = true;
     DPLL(kb->getClauses(), kb->getSymbols(), init);
+    
+    */
     
     //cout<<"all symbols: "<<AllSymbols.size();
     return 0;
