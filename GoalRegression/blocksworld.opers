@@ -1,0 +1,12 @@
+OPER pickup(a,b)
+precond: clear(a) on(a,b) gripper_empty()
+addlist: holding(a) clear(b)
+dellist: clear(a) on(a,b) gripper_empty()
+conflict: on(b,a) on(a,b) on(c,a) on(a,c) on(d,a) on(a,d) holding(b) holding(c) holding(d)
+END
+OPER pickup2(a,b)
+precond: clear(a) on(a,b) gripper_empty()
+addlist: holding(a) clear(b)
+dellist: clear(a) on(a,b) gripper_empty()
+conflict: on(b,a) on(a,b) on(c,a) on(a,c) on(d,a) on(a,d) holding(b) holding(c) holding(d)
+END

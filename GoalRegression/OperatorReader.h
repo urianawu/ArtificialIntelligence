@@ -10,5 +10,20 @@
 #define __GoalRegression__OperatorReader__
 
 #include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
+#include "Operator.h"
+
+using namespace std;
+class OperatorReader {
+public:
+    OperatorReader(char* filename);
+    vector<Operator*> getOperators(){return opers;}
+private:
+    vector<Operator*> opers;
+};
 
 #endif /* defined(__GoalRegression__OperatorReader__) */

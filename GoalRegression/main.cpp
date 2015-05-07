@@ -15,6 +15,8 @@
 #include <map>
 
 #include "KbReader.h"
+#include "OperatorGenerator.h"
+#include "OperatorReader.h"
 #include "ClausesReader.h"
 
 using namespace std;
@@ -306,8 +308,11 @@ bool DPLL(vector<Clause*> clauses, vector<string> symbols, mMap model)
 
 int main(int argc, char * argv[])
 {
-    char* init = argv[1];
-    KbReader initReader(init);
+    OperatorReader opersReader(argv[1]);
+    Operator* oper = opersReader.getOperators().front();
+
+    
+    KbReader initReader(argv[2]);
     
     /*
     ClausesReader* kb;

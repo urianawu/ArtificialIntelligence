@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoalRegression/main.cpp"
-            timestampString = "452623190.478603"
+            timestampString = "452725201.495821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
             landmarkName = "checkClauses(vector&lt;Clause*&gt; clauses, mMap model)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoalRegression/main.cpp"
-            timestampString = "452623190.478603"
+            timestampString = "452725201.495821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "168"
-            endingLineNumber = "168"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "checkClauses(vector&lt;Clause*&gt; clauses, mMap model)"
             landmarkType = "7">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoalRegression/main.cpp"
-            timestampString = "452623190.478603"
+            timestampString = "452725201.495821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "DPLL(vector&lt;Clause*&gt; clauses, vector&lt;string&gt; symbols, mMap model)"
             landmarkType = "7">
          </BreakpointContent>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoalRegression/main.cpp"
-            timestampString = "452623190.478603"
+            timestampString = "452725201.495821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "printModel (mMap model)"
             landmarkType = "7">
          </BreakpointContent>
@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoalRegression/main.cpp"
-            timestampString = "452623190.478603"
+            timestampString = "452725201.495821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "DPLL(vector&lt;Clause*&gt; clauses, vector&lt;string&gt; symbols, mMap model)"
             landmarkType = "7">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GoalRegression/main.cpp"
-            timestampString = "452623190.478603"
+            timestampString = "452725201.495821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "findPureSymbol(vector&lt;Clause*&gt; clauses, mMap model, cMap clauseMap)"
             landmarkType = "7">
          </BreakpointContent>
