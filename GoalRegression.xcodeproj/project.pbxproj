@@ -11,8 +11,6 @@
 		C6A6A4ED1AFA73D80037BFE7 /* KbReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A6A4EB1AFA73D80037BFE7 /* KbReader.cpp */; };
 		C6A6A4F11AFA74850037BFE7 /* OperatorGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A6A4EF1AFA74850037BFE7 /* OperatorGenerator.cpp */; };
 		C6A6A4F41AFA7DD70037BFE7 /* Operator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A6A4F21AFA7DD70037BFE7 /* Operator.cpp */; };
-		C6BF41791AB60AF00078C10C /* ClausesReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6BF41771AB60AF00078C10C /* ClausesReader.cpp */; };
-		C6BF417D1ABBC5D70078C10C /* Clause.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6BF417B1ABBC5D70078C10C /* Clause.cpp */; };
 		C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6DE65981A8E6E46003EC72A /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -39,10 +37,6 @@
 		C6A6A4F21AFA7DD70037BFE7 /* Operator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Operator.cpp; sourceTree = "<group>"; };
 		C6A6A4F31AFA7DD70037BFE7 /* Operator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Operator.h; sourceTree = "<group>"; };
 		C6A6A4F51AFC091A0037BFE7 /* blocksworld.opers */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = blocksworld.opers; sourceTree = "<group>"; };
-		C6BF41771AB60AF00078C10C /* ClausesReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClausesReader.cpp; sourceTree = "<group>"; };
-		C6BF41781AB60AF00078C10C /* ClausesReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClausesReader.h; sourceTree = "<group>"; };
-		C6BF417B1ABBC5D70078C10C /* Clause.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clause.cpp; sourceTree = "<group>"; };
-		C6BF417C1ABBC5D70078C10C /* Clause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clause.h; sourceTree = "<group>"; };
 		C6DE658E1A8E6DC3003EC72A /* GoalRegression */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GoalRegression; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE65981A8E6E46003EC72A /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		C6DE65991A8E6E46003EC72A /* makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = makefile; sourceTree = "<group>"; };
@@ -80,16 +74,12 @@
 			children = (
 				C6DE65981A8E6E46003EC72A /* main.cpp */,
 				C6DE65991A8E6E46003EC72A /* makefile */,
-				C6BF41771AB60AF00078C10C /* ClausesReader.cpp */,
-				C6BF41781AB60AF00078C10C /* ClausesReader.h */,
 				C6A6A4EB1AFA73D80037BFE7 /* KbReader.cpp */,
 				C6A6A4EC1AFA73D80037BFE7 /* KbReader.h */,
 				C6A6A4E81AFA73AD0037BFE7 /* OperatorReader.cpp */,
 				C6A6A4E91AFA73AD0037BFE7 /* OperatorReader.h */,
 				C6A6A4EF1AFA74850037BFE7 /* OperatorGenerator.cpp */,
 				C6A6A4F01AFA74850037BFE7 /* OperatorGenerator.h */,
-				C6BF417B1ABBC5D70078C10C /* Clause.cpp */,
-				C6BF417C1ABBC5D70078C10C /* Clause.h */,
 				C6A6A4F21AFA7DD70037BFE7 /* Operator.cpp */,
 				C6A6A4F31AFA7DD70037BFE7 /* Operator.h */,
 				C6A6A4EE1AFA743F0037BFE7 /* init.kb */,
@@ -156,11 +146,9 @@
 			files = (
 				C6A6A4F41AFA7DD70037BFE7 /* Operator.cpp in Sources */,
 				C6A6A4ED1AFA73D80037BFE7 /* KbReader.cpp in Sources */,
-				C6BF41791AB60AF00078C10C /* ClausesReader.cpp in Sources */,
 				C6DE659E1A8E6E46003EC72A /* main.cpp in Sources */,
 				C6A6A4F11AFA74850037BFE7 /* OperatorGenerator.cpp in Sources */,
 				C6A6A4EA1AFA73AD0037BFE7 /* OperatorReader.cpp in Sources */,
-				C6BF417D1ABBC5D70078C10C /* Clause.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

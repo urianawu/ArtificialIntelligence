@@ -20,5 +20,9 @@ using namespace std;
 class KbReader {
 public:
     KbReader(char* filename);
+    vector<string> getFacts(){return facts;}
+
+private:
+    vector<string> facts;
 };
 #endif /* defined(__GoalRegression__KbReader__) */

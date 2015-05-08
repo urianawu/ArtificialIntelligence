@@ -12,10 +12,19 @@
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
+#include <vector>
+#include <string>
 
 using namespace std;
 class OperatorGenerator{
 public:
     OperatorGenerator(char* filename);
+private:
+    string pickupPrecond(string x, string y);
+    string pickupAddList(string x, string y);
+    
+    string pickupConflict(string x);
+    string putonConflict(string x);
+
 };
 #endif /* defined(__GoalRegression__OperatorGenerator__) */
