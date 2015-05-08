@@ -33,15 +33,15 @@ OperatorGenerator::OperatorGenerator(char* filename)
                 }
             }
             operFile << "OPER pickup("<<it<<",table)\n";
-            operFile << "precond: "<<"on("<<it<<",table) gripper_empty()\n";
+            operFile << "precond: "<<"clear("<<it<<") on("<<it<<",table) gripper_empty()\n";
             operFile << "addList: "<<"holding("<<it<<")\n";
-            operFile << "delList: "<<"on("<<it<<",table) gripper_empty()\n";
+            operFile << "delList: "<<"clear("<<it<<") on("<<it<<",table) gripper_empty()\n";
             operFile << "conflict: "<<pickupConflict(it);
             operFile << "END\n";
             
             operFile << "OPER puton("<<it<<",table)\n";
             operFile << "precond: "<<"holding("<<it<<")\n";
-            operFile << "addList: "<<"on("<<it<<",table) gripper_empty()\n";
+            operFile << "addList: "<<"clear("<<it<<") on("<<it<<",table) gripper_empty()\n";
             operFile << "delList: "<<"holding("<<it<<")\n";
             operFile << "conflict: "<<putonConflict(it);
             operFile << "END\n";

@@ -199,16 +199,17 @@ int main(int argc, char * argv[])
          if (input[0] == 'q') {
              exit(0);
          }else {
+             
              vector<string> goals;
              char * pch;
              pch = strtok (input," ");
              while (pch != NULL)
              {
-                 cout << "goal: "<<pch<<endl;
                  goals.push_back(pch);
                  pch = strtok (NULL, " ");
              }
              cout<<"initiating goal regression..."<<endl;
+             iteration = 0;
              vector<string> plan = goalRegression(goals, opers, kb);
 
          }
