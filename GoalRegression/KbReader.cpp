@@ -14,7 +14,7 @@ KbReader::KbReader(char* filename)
     string fact;
     while (getline(infile, fact)) {
         if (!fact.empty() && fact[0] != '#') {
-            cout<<fact<<endl;
+            //cout<<fact<<endl;
             facts.push_back(fact);
         }
     }

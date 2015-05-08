@@ -45,9 +45,9 @@ OperatorReader::OperatorReader(char* filename)
                     type = 'O';
                 }else if (word == "precond:") {
                     type = 'p';
-                }else if (word == "addlist:") {
+                }else if (word == "addList:") {
                     type = 'a';
-                }else if (word == "dellist:") {
+                }else if (word == "delList:") {
                     type = 'd';
                 }else if (word == "conflict:") {
                     type = 'c';
